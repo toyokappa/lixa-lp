@@ -1,6 +1,7 @@
 <template lang="pug">
 div
   section-hero
+  section-about
   section-reserve
 </template>
 

@@ -1,7 +1,7 @@
 <template lang="pug">
 section#hero
   img.hero-image(src="@/assets/images/hero.jpg")
-  .main-copy 歳をとってもイケてる男性であり続けるためのパーソナルジム
+  h1.main-copy 歳をとってもイケてる男性であり続けるためのパーソナルジム
   .sub-copy 女性目線の徹底指導で"モテ"ボディメイク
   a.top-cta(href="#")
     .text オープン前予約で
@@ -20,10 +20,12 @@ section#hero
     font-size: 24px
     font-weight: bold
     color: white
+    line-height: 1.5
     padding: 15px 25px 15px 30px
     position: absolute
     bottom: 100px
     left: -15px
+    margin-bottom: 0
     z-index: 1
     &::before
       content: ''
