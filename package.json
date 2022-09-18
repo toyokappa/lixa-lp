@@ -9,8 +9,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/toast": "^3.3.1",
     "bootstrap": "^5.2.1",
     "core-js": "^3.19.3",
+    "mailgun.js": "^8.0.1",
     "nuxt": "^2.15.8",
     "ress": "^5.0.2",
     "vue": "^2.6.14",

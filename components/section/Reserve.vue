@@ -14,35 +14,39 @@ section#reserve.main-section
             .merit-body
               .merit-description {{ merit.description }}
     .col-4
-      form
+      form(@submit="sendMail")
         .mb-4
           label.form-label(for="reseveName")
             span.me-2 お名前
             span.badge.bg-original 必須
-          input#reseveName.form-control(type="text")
+          input#reseveName.form-control(type="text" v-model="reserveForm.name")
         .mb-4
           label.form-label(for="reseveAge")
             span.me-2 ご年齢
             span.badge.bg-original 必須
           .input-group.align-items-center
-            input#reseveAge.form-control(type="number")
+            input#reseveAge.form-control(type="number" v-model="reserveForm.age")
             span.input-group-text 歳
         .mb-4
           label.form-label(for="reseveEmail")
             span.me-2 メールアドレス
             span.badge.bg-original 必須
-          input#reseveEmail.form-control(type="email")
+          input#reseveEmail.form-control(type="email" v-model="reserveForm.email")
         .mb-4
           label.form-label(for="reseveTel")
             span.me-2 お電話番号
             span.badge.bg-original 必須
-          input#reseveTel.form-control(type="tel")
+          input#reseveTel.form-control(
+            type="tel"
+            v-model="reserveForm.tel"
+            placeholder="ハイフンなしでご入力ください"
+          )
         .mb-4
-          label.form-label(for="reseveBody") ご質問など
-          textarea#reseveBody.form-control(rows="5")
+          label.form-label(for="reseveMessage") ご質問など
+          textarea#reseveMessage.form-control(rows="5" v-model="reserveForm.message")
         .mb-4
           .form-check
-            input#reservePolicy.form-check-input(type="checkbox")
+            input#reservePolicy.form-check-input(type="checkbox" v-model="reserveForm.policy")
             label.form-check-label(for="reservePolicy")
               a.policy-link(
                 href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
@@ -71,9 +75,92 @@ export default {
           title: "オープンに向けた最新情報をお届け！",
           description: "オープンに向けて現在鋭意準備中です。安心してご入会いただける様に、準備進捗や重要な情報を定期的にお届けいたします。",
         },
-      ]
+      ],
+      reserveForm: {
+        name: "",
+        age: null,
+        email: "",
+        tel: "",
+        message: "",
+        policy: false
+      }
     }
-  }
+  },
+  methods: {
+    async sendMail(e) {
+      e.preventDefault();
+      const { name, age, email, tel, message } = this.reserveForm;
+      this.$nuxt.$loading.start();
+      const mailOption = {
+        from: `${process.env.projectName} オープン前予約フォーム <info@${process.env.host}>`,
+        to: [email],
+        bcc: [process.env.mailBcc],
+        subject: `【${process.env.projectName}】オープン前予約を受け付けました`,
+        text: `
+以下の内容でホームページよりオープン前予約を受け付けました。
+送信いただいた情報をもとに担当から折り返しますので今しばらくお待ち下さい。
+
+---
+# お名前
+${name} 様
+
+# ご年齢
+${age} 歳
+
+# メールアドレス
+${email}
+
+# お電話番号
+${tel}
+
+# 内容
+${message}
+---
+
+引き続き${process.env.projectName}をよろしくおねがいします！
+
+※ コチラのメールへの返信は受け付けておりません。
+
+====================================
+
+# ${process.env.projectName} 公式サイト
+https://${process.env.domain}
+
+====================================
+`,
+      };
+      try {
+        await this.$mgClient.messages.create(
+          `mg.${process.env.host}`,
+          mailOption
+        );
+        this.$toast.success(
+          "お問い合わせを受け付けました。ありがとうございました。",
+          { duration: 5000 }
+        );
+        this.resetForm();
+      } catch (err) {
+        this.$toast.error(
+          "お問い合わせに失敗しました。時間をおいて再度お試しください。",
+          { duration: 5000 }
+        );
+        console.log(err);
+        throw err;
+      } finally {
+        this.$nuxt.$loading.finish();
+      }
+    },
+    resetForm() {
+      this.reserveForm = {
+        name: "",
+        age: null,
+        email: "",
+        tel: "",
+        message: "",
+        policy: false
+      };
+    },
+  },
 }
 </script>
 
