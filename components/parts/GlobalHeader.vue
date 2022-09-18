@@ -2,14 +2,14 @@
 header.navbar.navbar-expand-lg.fixed-top.bg-black.py-0
   nav.container-fluid.px-0
     .navbar-bland.logo
-      a(href="#") LIXA
+      n-link(v-scroll-to="'#hero'" to) LIXA
     .navbar-nav.mx-auto.menu
       .nav-item(v-for="menu in menuList" :key="menu.en")
-        a.nav-link.px-4.py-0(href="#")
+        n-link.nav-link.px-4.py-0(v-scroll-to="menu.link" to)
           .text-en {{ menu.en }}
           .text-ja {{ menu.ja }}
     .navbar-bland.cta
-      a(href="#")
+      n-link(v-scroll-to="'#reserve'" to)
         | オープン前予約
 </template>
 

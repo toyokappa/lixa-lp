@@ -13,22 +13,27 @@ export default {
         {
           en: 'ABOUT',
           ja: 'LIXAとは',
+          link: '#about',
         },
         {
           en: 'TRAINTERS',
           ja: 'トレーナー紹介',
+          link: '#trainers',
         },
         {
           en: 'PROGRAM',
           ja: 'コース・料金',
+          link: '#program',
         },
         {
           en: 'Q&A',
           ja: 'よくある質問',
+          link: '#faq',
         },
         {
           en: 'ACCESS',
           ja: '店舗アクセス',
+          link: '#access',
         },
       ]
     }

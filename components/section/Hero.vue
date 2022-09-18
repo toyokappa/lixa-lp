@@ -3,7 +3,7 @@ section#hero
   img.hero-image(src="@/assets/images/hero.jpg")
   h1.main-copy 歳をとってもイケてる男性であり続けるためのパーソナルジム
   .sub-copy 女性目線の徹底指導で"モテ"ボディメイク
-  a.top-cta(href="#")
+  n-link.top-cta(v-scroll-to="'#reserve'" to)
     .text オープン前予約で
     .action オトクな特典をGET!!
     .text 予約フォームはコチラ

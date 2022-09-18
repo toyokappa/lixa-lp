@@ -6,14 +6,18 @@ footer
         img(src="@/assets/images/ads-recruit.png" alt="求人バナー")
     ul.main-menu
       li.menu-item(v-for="menu in menuList" :key="menu.en")
-        a.menu-link(href="#") {{ menu.ja }}
+        n-link.menu-link(v-scroll-to="menu.link" to) {{ menu.ja }}
     ul.sub-menu
-      li.menu-item(v-for="menu in subMenuList" :key="menu.text")
-        a(
-          :href="menu.link"
-          :target="menu.external ? '_blank' : null"
-          :rel="menu.external ? 'noopener' :  null"
-        ).menu-link {{ menu.text }}
+      li.menu-item
+        n-link.menu-link(v-scroll-to="'#reserve'" to) オープン前予約
+      li.menu-item
+        a.menu-link(href="#") 運営者情報
+      li.menu-item
+        a.menu-link(
+          href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
+          target="_blank"
+          rel="noopener"
+        ) プライバシーポリシー
   .copyrights
     span.me-1 &copy;
     span.company.me-1 LIXA
@@ -22,25 +26,6 @@ footer
 
 <script>
 export default {
-  data() {
-    return {
-      subMenuList: [
-        {
-          text: "オープン前予約",
-          link: "#",
-        },
-        {
-          text: "運営者情報",
-          link: "#",
-        },
-        {
-          text: "プライバシーポリシー",
-          link: "https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96",
-          external: true
-        }
-      ]
-    }
-  },
   props: {
     menuList: {
       type: Array,
