@@ -8,7 +8,7 @@ section#about.main-section.bg-base
       .col-4
         .icon
           img(src="@/assets/images/meal.svg" alt="食事管理")
-        h3.title 「食べて痩せる」食事管理
+        h3.section-subtitle.mb-4.text-center 「食べて痩せる」食事管理
         .description
           p
             div 摂取カロリーと消費カロリーのバランスに
@@ -27,7 +27,7 @@ section#about.main-section.bg-base
       .col-4
         .icon
           img(src="@/assets/images/training.svg" alt="トレーニング")
-        h3.title キメ細やかなトレーニング
+        h3.section-subtitle.mb-4.text-center キメ細やかなトレーニング
         .description
           p
             div
@@ -46,7 +46,7 @@ section#about.main-section.bg-base
       .col-4
         .icon
           img(src="@/assets/images/woman.svg" alt="女性トレーナー")
-        h3.title 女性目線でモテボディ指導
+        h3.section-subtitle.mb-4.text-center 女性目線でモテボディ指導
         .description
           p
             div
@@ -70,11 +70,6 @@ section#about.main-section.bg-base
   img
     width: 64px
     height: auto
-.title
-  text-align: center
-  font-size: 24px
-  font-weight: bold
-  margin-bottom: 20px
 .description
   text-align: center
   line-height: 1.75

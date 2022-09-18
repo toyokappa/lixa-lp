@@ -2,6 +2,7 @@
 div
   section-hero
   section-about
+  section-program
   section-reserve
 </template>
 
