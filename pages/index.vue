@@ -2,7 +2,9 @@
 div
   section-hero
   section-about
+  section-trainers
   section-program
+  section-access
   section-reserve
 </template>
 
