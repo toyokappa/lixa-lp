@@ -2,6 +2,7 @@
 div
   parts-global-header(:menuList="menuList")
   nuxt
+  parts-global-footer(:menuList="menuList")
 </template>
 
 <script>
