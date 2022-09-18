@@ -14,48 +14,102 @@ section#reserve.main-section
             .merit-body
               .merit-description {{ merit.description }}
     .col-4
-      form(@submit="sendMail")
+      validation-observer(
+        v-slot="{ invalid }"
+        tag="form"
+        @submit.prevent="sendMail"
+        ref="reserveForm"
+      )
         .mb-4
-          label.form-label(for="reseveName")
-            span.me-2 お名前
-            span.badge.bg-original 必須
-          input#reseveName.form-control(type="text" v-model="reserveForm.name")
-        .mb-4
-          label.form-label(for="reseveAge")
-            span.me-2 ご年齢
-            span.badge.bg-original 必須
-          .input-group.align-items-center
-            input#reseveAge.form-control(type="number" v-model="reserveForm.age")
-            span.input-group-text 歳
-        .mb-4
-          label.form-label(for="reseveEmail")
-            span.me-2 メールアドレス
-            span.badge.bg-original 必須
-          input#reseveEmail.form-control(type="email" v-model="reserveForm.email")
-        .mb-4
-          label.form-label(for="reseveTel")
-            span.me-2 お電話番号
-            span.badge.bg-original 必須
-          input#reseveTel.form-control(
-            type="tel"
-            v-model="reserveForm.tel"
-            placeholder="ハイフンなしでご入力ください"
+          validation-provider(
+            v-slot="{ errors }"
+            rules="required"
+            name="お名前"
           )
+            label.form-label(for="reseveName")
+              span.me-2 お名前
+              span.badge.bg-original 必須
+            input#reseveName.form-control(
+              type="text"
+              :class="{ 'is-invalid': errors[0] }"
+              v-model="reserveForm.name"
+            )
+            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+        .mb-4
+          validation-provider(
+            v-slot="{ errors }"
+            rules="required"
+            name="ご年齢"
+          )
+            label.form-label(for="reseveAge")
+              span.me-2 ご年齢
+              span.badge.bg-original 必須
+            .input-group.align-items-center
+              input#reseveAge.form-control(
+                type="number"
+                :class="{ 'is-invalid': errors[0] }"
+                v-model="reserveForm.age"
+              )
+              span.input-group-text 歳
+              .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+        .mb-4
+          validation-provider(
+            v-slot="{ errors }"
+            rules="required|email"
+            name="メールアドレス"
+          )
+            label.form-label(for="reseveEmail")
+              span.me-2 メールアドレス
+              span.badge.bg-original 必須
+            input#reseveEmail.form-control(
+              type="email"
+              :class="{ 'is-invalid': errors[0] }"
+              v-model="reserveForm.email"
+              )
+            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+        .mb-4
+          validation-provider(
+            v-slot="{ errors }"
+            rules="required|phone"
+            name="お電話番号"
+          )
+            label.form-label(for="reseveTel")
+              span.me-2 お電話番号
+              span.badge.bg-original 必須
+            input#reseveTel.form-control(
+              type="tel"
+              :class="{ 'is-invalid': errors[0] }"
+              v-model="reserveForm.tel"
+            )
+            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
         .mb-4
           label.form-label(for="reseveMessage") ご質問など
           textarea#reseveMessage.form-control(rows="5" v-model="reserveForm.message")
         .mb-4
-          .form-check
-            input#reservePolicy.form-check-input(type="checkbox" v-model="reserveForm.policy")
-            label.form-check-label(for="reservePolicy")
-              a.policy-link(
-                href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
-                target="_blank"
-                rel="noopener"
-              ) プライバシーポリシー
-              span に同意します。
+          validation-provider(
+            v-slot="{ errors }"
+            rules="accept"
+            name="プライバシーポリシーへの同意"
+          )
+            .form-check
+              input#reservePolicy.form-check-input(
+                type="checkbox"
+                :class="{ 'is-invalid': errors[0] }"
+                v-model="reserveForm.policy"
+              )
+              label.form-check-label(for="reservePolicy")
+                a.policy-link(
+                  href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
+                  target="_blank"
+                  rel="noopener"
+                ) プライバシーポリシー
+                span に同意します。
+              .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
         .d-grid
-          button.btn.btn-original.py-2(type="submit") 上記の内容で申し込む
+          button.btn.btn-original.py-2(
+            type="submit"
+            :disabled="invalid"
+          ) 上記の内容で申し込む
 </template>
 
 <script>
@@ -82,13 +136,12 @@ export default {
         email: "",
         tel: "",
         message: "",
-        policy: false
+        policy: false,
       }
     }
   },
   methods: {
-    async sendMail(e) {
-      e.preventDefault();
+    async sendMail() {
       const { name, age, email, tel, message } = this.reserveForm;
       this.$nuxt.$loading.start();
       const mailOption = {
@@ -159,6 +212,7 @@ https://${process.env.domain}
         message: "",
         policy: false
       };
+      this.$refs.reserveForm.reset()
     },
   },
 }
