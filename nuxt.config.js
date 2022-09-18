@@ -39,7 +39,8 @@ export default {
   ],
   styleResources: {
     sass: [
-      "@/assets/sass/constants.sass"
+      "@/assets/sass/constants.sass",
+      "@/assets/sass/default.sass",
     ]
   },
 

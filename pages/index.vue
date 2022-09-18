@@ -1,5 +1,7 @@
 <template lang="pug">
-section-hero
+div
+  section-hero
+  section-reserve
 </template>
 
 <script>
