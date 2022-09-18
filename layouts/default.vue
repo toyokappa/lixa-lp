@@ -34,3 +34,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+body
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+</style>
