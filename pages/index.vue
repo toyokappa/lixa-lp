@@ -4,6 +4,7 @@ div
   section-about
   section-trainers
   section-program
+  section-faq
   section-access
   section-reserve
 </template>
