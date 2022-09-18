@@ -1,5 +1,5 @@
 <template lang="pug">
-div hello
+section-hero
 </template>
 
 <script>
@@ -9,6 +9,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-div
-  color: red
 </style>
