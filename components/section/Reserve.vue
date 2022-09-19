@@ -2,7 +2,7 @@
 section#reserve.main-section
   h2.section-title オープン前予約
   .row
-    .offset-2.col-4
+    .offset-lg-2.col-lg-4
       .reserve-explanation
         img(src="@/assets/images/reserve-eyecatch.jpg" alt="予約トップ画像")
         .reserve-merit
@@ -13,7 +13,7 @@ section#reserve.main-section
               .merit-title {{ merit.title }}
             .merit-body
               .merit-description {{ merit.description }}
-    .col-4
+    .col-lg-4
       validation-observer(
         v-slot="{ invalid }"
         tag="form"

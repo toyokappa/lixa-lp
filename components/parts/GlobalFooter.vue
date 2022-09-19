@@ -1,9 +1,9 @@
 <template lang="pug">
 footer
-  .footer-menu.d-flex
+  .footer-menu
     .ads
       a(href="#")
-        img(src="@/assets/images/ads-recruit.png" alt="求人バナー")
+        img.ads-recruit(src="@/assets/images/ads-recruit.png" alt="求人バナー")
     ul.main-menu
       li.menu-item(v-for="menu in menuList" :key="menu.en")
         n-link.menu-link(v-scroll-to="menu.link" to) {{ menu.ja }}
@@ -41,8 +41,10 @@ footer
   background-color: black
   padding: 50px 0 20px
   .footer-menu
-    justify-content: center
-    margin-bottom: 40px
+    @include media-breakpoint-up(lg)
+      display: flex
+      justify-content: center
+      margin-bottom: 40px
     .ads, .main-menu, .sub-menu
       margin-bottom: 0
     .ads, .main-menu
@@ -56,6 +58,9 @@ footer
           text-decoration: none
         &:last-child
           margin-bottom: 0
+    .ads
+      .ads-recruit
+        max-width: 100%
   .copyrights
     text-align: center
     font-size: 12px

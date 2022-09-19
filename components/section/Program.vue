@@ -2,9 +2,9 @@
 section#program.main-section.bg-base
   h2.section-title コース・料金
   .row
-    .offset-2.col-4
+    .offset-lg-2.col-lg-4
       img.imagine(src="@/assets/images/course.jpg" alt="2ヶ月後のイメージ")
-    .col-4
+    .col-lg-4
       .section-subtitle 2ヶ月コース
       h3.section-subtitle.text-original.mb-4 短期集中で理想のモテボディへ。
       .proposal
