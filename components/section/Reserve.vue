@@ -189,13 +189,13 @@ https://${process.env.domain}
           mailOption
         );
         this.$toast.success(
-          "お問い合わせを受け付けました。ありがとうございました。",
+          "事前予約を受け付けました。ありがとうございました。",
           { duration: 5000 }
         );
         this.resetForm();
       } catch (err) {
         this.$toast.error(
-          "お問い合わせに失敗しました。時間をおいて再度お試しください。",
+          "事前予約に失敗しました。時間をおいて再度お試しください。",
           { duration: 5000 }
         );
         console.log(err);
