@@ -44,6 +44,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '@/plugins/burger', ssr: false },
     '@/plugins/mailgun',
     '@/plugins/validate',
   ],
@@ -64,7 +65,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['vue-scrollto/nuxt', { duration: 0 }],
+    ['vue-scrollto/nuxt', { duration: 0, offset: -30 }],
     '@nuxtjs/toast'
   ],
   toast: {

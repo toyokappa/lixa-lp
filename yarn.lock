@@ -8918,6 +8918,11 @@ vue-style-loader@^4.1.0, vue-style-loader@^4.1.3:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue-tasty-burgers@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/vue-tasty-burgers/-/vue-tasty-burgers-1.2.3.tgz#6465f6eae6d96f065c8ab3ab165a581ced4759fb"
+  integrity sha512-SHY87M3BMKsksRFXePNHByLMzYzem5D4RYRrb5Rpb0dmWAi9WQKEPZcDLD66dNqy/5X4fF8ztLhEDACm223c/Q==
+
 vue-template-compiler@^2.6.12, vue-template-compiler@^2.6.14:
   version "2.7.10"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.7.10.tgz#9e20f35b2fdccacacf732dd7dedb49bf65f4556b"

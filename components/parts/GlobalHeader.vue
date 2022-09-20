@@ -3,7 +3,7 @@ header.header-nav.navbar.navbar-expand-lg.fixed-top
   nav.container-fluid.px-0
     .navbar-bland.logo
       n-link(v-scroll-to="'#hero'" to) LIXA
-    .navbar-collapse.collapse
+    .collapse-menu
       .navbar-nav.mx-auto.menu
         .nav-item(v-for="menu in menuList" :key="menu.en")
           n-link.nav-link.px-4.py-0(v-scroll-to="menu.link" to)
@@ -12,16 +12,43 @@ header.header-nav.navbar.navbar-expand-lg.fixed-top
     .navbar-bland.cta
       n-link(v-scroll-to="'#reserve'" to)
         | オープン前予約
-    button.navbar-toggler
-      span.navbar-toggler-icon
+    .menu-toggler
+      client-only
+        tasty-burger-button(
+          type="spin"
+          color="black"
+          size="s"
+          ref="burger"
+          :active="isActive"
+          @toggle="toggleNavMenu"
+        )
+  #navbarMenu(ref="navbarMenu")
+    ul.navbar-nav(@click="toggleActive")
+      li.nav-item(v-for="menu in menuList" :key="menu.en")
+        n-link.nav-link.px-4.py-0(v-scroll-to="menu.link" to)
+          .text-ja {{ menu.ja }}
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      isActive: false,
+    }
+  },
   props: {
     menuList: {
       type: Array,
       required: true,
+    }
+  },
+  methods: {
+    toggleActive() {
+      this.isActive = !this.isActive
+    },
+    toggleNavMenu(active) {
+      const nav = this.$refs.navbarMenu
+      active ? nav.classList.add("visible") : nav.classList.remove("visible")
     }
   }
 }
@@ -35,6 +62,7 @@ export default {
     padding-bottom: 0 !important
   @include media-breakpoint-down(md)
     background-color: white
+    padding: 0
   .logo
     @include media-breakpoint-up(lg)
       width: 250px
@@ -47,7 +75,9 @@ export default {
       &::before
         @include slash-bg
         background-color: white
-        transform: skewX(-20deg) translateX(-10px)
+        transform: skewX(-20deg) translateX(-15px)
+    @include media-breakpoint-down(md)
+      margin-left: 10px
     a
       font-size: 32px
       font-weight: bold
@@ -58,20 +88,25 @@ export default {
     a
       color: white
   .cta
+    display: flex
+    align-items: center
+    justify-content: center
+    overflow: hidden
+    overflow: hidden
+    white-space: nowrap
+    position: relative
     @include media-breakpoint-up(lg)
-      display: flex
-      align-items: center
-      justify-content: center
-      overflow: hidden
       width: 250px
       height: 60px
-      overflow: hidden
-      white-space: nowrap
-      position: relative
-      &::before
-        @include slash-bg
-        background-color: $accent-color
-        transform: skewX(-20deg) translateX(10px)
+    @include media-breakpoint-down(md)
+      width: 160px
+      height: 60px
+      padding-left: 10px
+      margin-left: auto
+    &::before
+      @include slash-bg
+      background-color: $accent-color
+      transform: skewX(-20deg) translateX(15px)
     a
       font-size: 16px
       font-weight: bold
@@ -83,4 +118,44 @@ export default {
   .text-ja
     font-size: 10px
     font-weight: bold
+  .menu-toggler
+    display: none
+  #navbarMenu
+    display: none
+  @include media-breakpoint-down(md)
+    .collapse-menu
+      display: none
+    .menu-toggler
+      display: block
+      padding: 0 20px
+    #navbarMenu
+      display: block !important
+      position: fixed
+      top: 60px
+      left: 50%
+      transform: translateX(-50%)
+      width: 100%
+      background-color: black
+      visibility: hidden
+      opacity: 0
+      transition: 0.3s
+      &.visible
+        visibility: visible
+        opacity: 1
+      .navbar-nav
+        width: 100%
+        padding: 0 20px
+        .nav-item
+          padding: 15px 0
+          border-bottom: 1px solid $base-grey
+          margin-left: 0 !important
+          &:last-child
+            border-bottom: none
+          .nav-link
+            display: flex
+            align-items: center
+            justify-content: center
+            color: white
+            .text-ja
+              font-size: 16px
 </style>
