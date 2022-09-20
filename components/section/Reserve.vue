@@ -4,7 +4,7 @@ section#reserve.main-section
   .row
     .offset-lg-2.col-lg-4
       .reserve-explanation
-        img(src="@/assets/images/reserve-eyecatch.jpg" alt="予約トップ画像")
+        img(src="@/assets/images/reserve-eyecatch.jpeg" alt="予約トップ画像")
         .reserve-merit
           .title オープン前予約のメリット
           .merit-item(v-for="(merit, index) in meritList" :key="merit.title")

@@ -1,6 +1,6 @@
 <template lang="pug">
 section#hero
-  img.hero-image(src="@/assets/images/hero.jpg")
+  img.hero-image(src="@/assets/images/hero.jpeg")
   h1.main-copy 歳をとってもイケてる男性であり続けるためのパーソナルジム
   .sub-copy 女性目線の徹底指導で"モテ"ボディメイク
   n-link.top-cta(v-scroll-to="'#reserve'" to)
@@ -15,7 +15,9 @@ section#hero
   overflow: hidden
   .hero-image
     width: 100%
-    height: auto
+    height: 75%
+    object-fit: cover
+    object-position: center center
   .main-copy
     font-size: 24px
     font-weight: bold
