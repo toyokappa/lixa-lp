@@ -39,11 +39,17 @@ section#program.main-section.bg-base
   border: 3px solid black
   margin-bottom: 10px
   position: relative
+  @include media-breakpoint-down(md)
+    padding: 20px 20px 15px
   .value
     font-size: 32px
     font-weight: bold
+    @include media-breakpoint-down(md)
+      font-size: 28px
   .unit
     font-weight: bold
+    @include media-breakpoint-down(md)
+      font-size: 12px
   .course-menu
     font-size: 20px
     font-weight: bold
@@ -52,6 +58,9 @@ section#program.main-section.bg-base
     position: absolute
     top: -16px
     left: 20px
+    @include media-breakpoint-down(md)
+      font-size: 16px
+      top: -14px
 .caption
   font-size: 12px
   @include media-breakpoint-up(lg)

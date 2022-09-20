@@ -6,7 +6,7 @@ section#faq.main-section
       .offset-lg-2.col-lg-8.offset-1.col-10
         .faq-list
           .faq-item(v-for="faq in faqList" :key="faq.question")
-            h3.question Q. {{ faq.question }}
+            h3.section-subtitle.question Q. {{ faq.question }}
             .answer
               span.me-2 A.
               span {{ faq.answer }}
@@ -36,8 +36,6 @@ export default {
   .faq-item
     margin-bottom: 40px
     .question
-      font-size: 24px
-      font-weight: bold
       margin-bottom: 20px
     .answer
       line-height: 1.75
