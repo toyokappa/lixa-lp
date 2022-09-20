@@ -1,9 +1,9 @@
 <template lang="pug">
 section#reserve.main-section
   h2.section-title オープン前予約
-  .container-fluid.gx-0
+  .container-fluid.gx-lg-4.gx-0
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
-      .offset-lg-2.col-lg-4.col-12
+      .offset-lg-1.col-lg-5.col-12
         .reserve-explanation
           img(src="@/assets/images/reserve-eyecatch.jpeg" alt="予約トップ画像")
           .reserve-merit
@@ -14,7 +14,7 @@ section#reserve.main-section
                 .merit-title {{ merit.title }}
               .merit-body
                 .merit-description {{ merit.description }}
-      .offset-lg-0.col-lg-4.offset-1.col-10
+      .offset-lg-0.col-lg-5.offset-1.col-10
         validation-observer(
           v-slot="{ invalid }"
           tag="form"
