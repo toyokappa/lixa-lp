@@ -1,115 +1,116 @@
 <template lang="pug">
 section#reserve.main-section
   h2.section-title オープン前予約
-  .row
-    .offset-lg-2.col-lg-4
-      .reserve-explanation
-        img(src="@/assets/images/reserve-eyecatch.jpeg" alt="予約トップ画像")
-        .reserve-merit
-          .title オープン前予約のメリット
-          .merit-item(v-for="(merit, index) in meritList" :key="merit.title")
-            .merit-header
-              .merit-number.me-1 {{ index + 1 }}
-              .merit-title {{ merit.title }}
-            .merit-body
-              .merit-description {{ merit.description }}
-    .col-lg-4
-      validation-observer(
-        v-slot="{ invalid }"
-        tag="form"
-        @submit.prevent="sendMail"
-        ref="reserveForm"
-      )
-        .mb-4
-          validation-provider(
-            v-slot="{ errors }"
-            rules="required"
-            name="お名前"
-          )
-            label.form-label(for="reseveName")
-              span.me-2 お名前
-              span.badge.bg-original 必須
-            input#reseveName.form-control(
-              type="text"
-              :class="{ 'is-invalid': errors[0] }"
-              v-model="reserveForm.name"
+  .container-fluid.gx-0
+    .row.gx-lg-4.gx-0.gy-lg-0.gy-4
+      .offset-lg-2.col-lg-4.col-12
+        .reserve-explanation
+          img(src="@/assets/images/reserve-eyecatch.jpeg" alt="予約トップ画像")
+          .reserve-merit
+            .title オープン前予約のメリット
+            .merit-item(v-for="(merit, index) in meritList" :key="merit.title")
+              .merit-header
+                .merit-number.me-1 {{ index + 1 }}
+                .merit-title {{ merit.title }}
+              .merit-body
+                .merit-description {{ merit.description }}
+      .offset-lg-0.col-lg-4.offset-1.col-10
+        validation-observer(
+          v-slot="{ invalid }"
+          tag="form"
+          @submit.prevent="sendMail"
+          ref="reserveForm"
+        )
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="required"
+              name="お名前"
             )
-            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-        .mb-4
-          validation-provider(
-            v-slot="{ errors }"
-            rules="required"
-            name="ご年齢"
-          )
-            label.form-label(for="reseveAge")
-              span.me-2 ご年齢
-              span.badge.bg-original 必須
-            .input-group.align-items-center
-              input#reseveAge.form-control(
-                type="number"
+              label.form-label(for="reseveName")
+                span.me-2 お名前
+                span.badge.bg-original 必須
+              input#reseveName.form-control(
+                type="text"
                 :class="{ 'is-invalid': errors[0] }"
-                v-model="reserveForm.age"
+                v-model="reserveForm.name"
               )
-              span.input-group-text 歳
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-        .mb-4
-          validation-provider(
-            v-slot="{ errors }"
-            rules="required|email"
-            name="メールアドレス"
-          )
-            label.form-label(for="reseveEmail")
-              span.me-2 メールアドレス
-              span.badge.bg-original 必須
-            input#reseveEmail.form-control(
-              type="email"
-              :class="{ 'is-invalid': errors[0] }"
-              v-model="reserveForm.email"
-              )
-            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-        .mb-4
-          validation-provider(
-            v-slot="{ errors }"
-            rules="required|phone"
-            name="お電話番号"
-          )
-            label.form-label(for="reseveTel")
-              span.me-2 お電話番号
-              span.badge.bg-original 必須
-            input#reseveTel.form-control(
-              type="tel"
-              :class="{ 'is-invalid': errors[0] }"
-              v-model="reserveForm.tel"
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="required"
+              name="ご年齢"
             )
-            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-        .mb-4
-          label.form-label(for="reseveMessage") ご質問など
-          textarea#reseveMessage.form-control(rows="5" v-model="reserveForm.message")
-        .mb-4
-          validation-provider(
-            v-slot="{ errors }"
-            rules="accept"
-            name="プライバシーポリシーへの同意"
-          )
-            .form-check
-              input#reservePolicy.form-check-input(
-                type="checkbox"
+              label.form-label(for="reseveAge")
+                span.me-2 ご年齢
+                span.badge.bg-original 必須
+              .input-group.align-items-center
+                input#reseveAge.form-control(
+                  type="number"
+                  :class="{ 'is-invalid': errors[0] }"
+                  v-model="reserveForm.age"
+                )
+                span.input-group-text 歳
+                .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="required|email"
+              name="メールアドレス"
+            )
+              label.form-label(for="reseveEmail")
+                span.me-2 メールアドレス
+                span.badge.bg-original 必須
+              input#reseveEmail.form-control(
+                type="email"
                 :class="{ 'is-invalid': errors[0] }"
-                v-model="reserveForm.policy"
-              )
-              label.form-check-label(for="reservePolicy")
-                a.policy-link(
-                  href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
-                  target="_blank"
-                  rel="noopener"
-                ) プライバシーポリシー
-                span に同意します。
+                v-model="reserveForm.email"
+                )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-        .d-grid
-          button.btn.btn-original.py-2(
-            type="submit"
-            :disabled="invalid"
-          ) 上記の内容で申し込む
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="required|phone"
+              name="お電話番号"
+            )
+              label.form-label(for="reseveTel")
+                span.me-2 お電話番号
+                span.badge.bg-original 必須
+              input#reseveTel.form-control(
+                type="tel"
+                :class="{ 'is-invalid': errors[0] }"
+                v-model="reserveForm.tel"
+              )
+              .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          .mb-4
+            label.form-label(for="reseveMessage") ご質問など
+            textarea#reseveMessage.form-control(rows="5" v-model="reserveForm.message")
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="accept"
+              name="プライバシーポリシーへの同意"
+            )
+              .form-check
+                input#reservePolicy.form-check-input(
+                  type="checkbox"
+                  :class="{ 'is-invalid': errors[0] }"
+                  v-model="reserveForm.policy"
+                )
+                label.form-check-label(for="reservePolicy")
+                  a.policy-link(
+                    href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
+                    target="_blank"
+                    rel="noopener"
+                  ) プライバシーポリシー
+                  span に同意します。
+                .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          .d-grid
+            button.btn.btn-original.py-2(
+              type="submit"
+              :disabled="invalid"
+            ) 上記の内容で申し込む
 </template>
 
 <script>

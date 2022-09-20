@@ -1,29 +1,30 @@
 <template lang="pug">
 section#program.main-section.bg-base
   h2.section-title コース・料金
-  .row
-    .offset-lg-2.col-lg-4
-      img.imagine(src="@/assets/images/course.jpeg" alt="2ヶ月後のイメージ")
-    .col-lg-4
-      .section-subtitle 2ヶ月コース
-      h3.section-subtitle.text-original.mb-4 短期集中で理想のモテボディへ。
-      .proposal
-        div LIXAに60日の時間をください。
-        div 体質を改善し、健康で、太りにくく、
-        div かっこいい理想の体作りを実現いたします。
-      .course
-        .row.align-items-center
-          .col-5 入会金
-          .col-7
-            span.value.text-original 40,000
-            span.unit 円(税込)
-        .row.align-items-center
-          .col-5 コース料金
-          .col-7
-            span.value.text-original 160,000
-            span.unit 円(税込)
-        .course-menu 全16回 (1回60分)
-      .caption ※ LIXAを気に入っていただいた方へ2ヶ月後のコースもご用意しております。
+  .container-fluid.gx-0
+    .row.gx-lg-4.gx-0.gy-lg-0.gy-4
+      .offset-lg-2.col-lg-4.col-12
+        img.imagine(src="@/assets/images/course.jpeg" alt="2ヶ月後のイメージ")
+      .offset-lg-0.col-lg-4.offset-1.col-10
+        .section-subtitle 2ヶ月コース
+        h3.section-subtitle.text-original.mb-4 短期集中で理想のモテボディへ。
+        .proposal
+          div LIXAに60日の時間をください。
+          div 体質を改善し、健康で、太りにくく、
+          div かっこいい理想の体作りを実現いたします。
+        .course
+          .row.align-items-center
+            .col-5 入会金
+            .col-7
+              span.value.text-original 40,000
+              span.unit 円(税込)
+          .row.align-items-center
+            .col-5 コース料金
+            .col-7
+              span.value.text-original 160,000
+              span.unit 円(税込)
+          .course-menu 全16回 (1回60分)
+        .caption ※ LIXAを気に入っていただいた方へ2ヶ月後のコースもご用意しております。
 </template>
 
 <style lang="sass" scoped>
@@ -53,5 +54,6 @@ section#program.main-section.bg-base
     left: 20px
 .caption
   font-size: 12px
-  white-space: nowrap
+  @include media-breakpoint-up(lg)
+    white-space: nowrap
 </style>

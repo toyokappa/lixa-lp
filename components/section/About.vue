@@ -3,9 +3,9 @@ section#about.main-section.bg-base
   h2.section-title
     span.text-original LIXA
     span が選ばれる理由
-  .container
-    .row.gx-5
-      .col-lg-4
+  .container.gx-0
+    .row.gx-lg-5.gx-0.gy-lg-0.gy-4
+      .col-lg-4.col-12
         .icon
           img(src="@/assets/images/meal.svg" alt="食事管理")
         h3.section-subtitle.mb-4.text-center 「食べて痩せる」食事管理
@@ -24,7 +24,7 @@ section#about.main-section.bg-base
               span.text-original かっこいい体作り
               | を
             div サポートいたします。
-      .col-lg-4
+      .col-lg-4.col-12
         .icon
           img(src="@/assets/images/training.svg" alt="トレーニング")
         h3.section-subtitle.mb-4.text-center キメ細やかなトレーニング
@@ -43,7 +43,7 @@ section#about.main-section.bg-base
               | トレーナーが
               span.text-original キメ細やかに指導
               | いたします。
-      .col-lg-4
+      .col-lg-4.col-12
         .icon
           img(src="@/assets/images/woman.svg" alt="女性トレーナー")
         h3.section-subtitle.mb-4.text-center 女性目線でモテボディ指導
