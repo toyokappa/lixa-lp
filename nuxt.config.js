@@ -55,6 +55,17 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/style-resources',
+    [
+      'nuxt-compress',
+      {
+        gzip: {
+          cache: true,
+        },
+        brotli: {
+          threshold: 10240,
+        }
+      }
+    ],
   ],
   styleResources: {
     sass: [
@@ -66,7 +77,10 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     ['vue-scrollto/nuxt', { duration: 0, offset: -30 }],
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/redirect-module',
+    '@nuxtjs/robots',
   ],
   toast: {
     position: 'bottom-center',
@@ -76,6 +90,28 @@ export default {
         toastObject.goAway(0)
       }
     }
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: `https://${domain}`,
+    gzip: true,
+    trailingSlash: true,
+  },
+  router: {
+    trailingSlash: true,
+  },
+  redirect: [
+    {
+      from: '^(\\/[^\\?]*[^\\/])(\\?.*)?$',
+      to: '$1/$2',
+      statusCode: 301
+    }
+  ],
+  robots: {
+    UserAgent: '*',
+    // クローリングしないパスを記述
+    // sitemap.xmlのURLを記述
+    Sitemap: `https://${domain}/sitemap.xml`,
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
