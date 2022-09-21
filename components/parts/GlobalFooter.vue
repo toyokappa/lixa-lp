@@ -16,7 +16,11 @@ footer
               li.menu-item
                 n-link.menu-link(v-scroll-to="'#reserve'" to) オープン前予約
               li.menu-item
-                a.menu-link(href="#") 運営者情報
+                a.menu-link(
+                  href="https://lixa.notion.site/c09f75afdb2540f58248f08c09ffb6dd"
+                  target="_blank"
+                  rel="noopener"
+                ) 運営者情報
               li.menu-item
                 a.menu-link(
                   href="https://lixa.notion.site/4bb22e94aeab48b0a5f977f3f64e6b96"
