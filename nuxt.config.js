@@ -90,8 +90,7 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/redirect-module',
     '@nuxtjs/robots',
-    '@nuxtjs/google-gtag',
-    '@nuxtjs/gtm'
+    '@nuxtjs/gtm',
   ],
   toast: {
     position: 'bottom-center',
@@ -123,9 +122,6 @@ export default {
     // クローリングしないパスを記述
     // sitemap.xmlのURLを記述
     Sitemap: `https://${domain}/sitemap.xml`,
-  },
-  'google-gtag': {
-    id: 'G-7Q1TFQ15ZM'
   },
   gtm: {
     id: 'GTM-NT8Z4NL'
