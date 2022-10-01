@@ -75,7 +75,7 @@ section#hero
     font-weight: bold
     @include media-breakpoint-up(lg)
       text-align: right
-      text-shadow: 3px 3px 0 #fff
+      text-shadow: 3px 3px 0 white
       line-height: 1.2
       position: absolute
       bottom: 200px
