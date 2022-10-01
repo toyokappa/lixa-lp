@@ -5,6 +5,15 @@ section#hero
     span 歳をとってもイケてる男性で
     span あり続けるためのパーソナルジム
   .sub-copy 女性目線の徹底指導で"モテ"ボディメイク
+  .open-info
+    div
+      span.value 2023
+      span.unit 年
+      span.value 1
+      span.unit 月中旬、
+    div
+      span.value 前橋
+      span.unit にオープン予定！
   n-link.top-cta(v-scroll-to="'#reserve'" to)
     .cta-set
       .text オープン前予約で
@@ -36,7 +45,7 @@ section#hero
     z-index: 1
     @include media-breakpoint-down(md)
       font-size: 16px
-      bottom: 150px
+      bottom: 210px
       span
         display: block
     &::before
@@ -56,12 +65,34 @@ section#hero
     z-index: 1
     @include media-breakpoint-down(md)
       font-size: 14px
-      bottom: 85px
+      bottom: 145px
     &::before
       @include slash-bg
       background-color: rgba(255, 255, 255, 0.8)
       transform: skewX(-20deg) translateX(-15px)
       z-index: -1
+  .open-info
+    font-weight: bold
+    @include media-breakpoint-up(lg)
+      text-align: right
+      text-shadow: 3px 3px 0 #fff
+      line-height: 1.2
+      position: absolute
+      bottom: 200px
+      right: 30px
+      z-index: 1
+      .value
+        font-size: 40px
+      .unit
+        font-size: 32px
+    @include media-breakpoint-down(md)
+      padding: 10px 20px
+      div
+        display: inline
+        .value
+          font-size: 24px
+        .unit
+          font-size: 16px
   .top-cta
     font-weight: bold
     color: white
