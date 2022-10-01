@@ -91,6 +91,7 @@ export default {
     '@nuxtjs/redirect-module',
     '@nuxtjs/robots',
     '@nuxtjs/google-gtag',
+    '@nuxtjs/gtm'
   ],
   toast: {
     position: 'bottom-center',
@@ -125,6 +126,9 @@ export default {
   },
   'google-gtag': {
     id: 'G-7Q1TFQ15ZM'
+  },
+  gtm: {
+    id: 'GTM-NT8Z4NL'
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
