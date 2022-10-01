@@ -188,6 +188,11 @@ https://${process.env.domain}
           `mg.${process.env.host}`,
           mailOption
         );
+        window.dataLayer = window.dataLayer || []
+        dataLayer.push({
+          'trackReserveComplete': '/reserve/complete',
+          'event': 'loadready',
+        })
         this.$toast.success(
           "事前予約を受け付けました。ありがとうございました。",
           { duration: 5000 }
