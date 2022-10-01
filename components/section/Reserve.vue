@@ -34,6 +34,7 @@ section#reserve.main-section
                 type="text"
                 :class="{ 'is-invalid': errors[0] }"
                 v-model="reserveForm.name"
+                @focus="formClicked=true"
               )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
@@ -50,6 +51,7 @@ section#reserve.main-section
                   type="number"
                   :class="{ 'is-invalid': errors[0] }"
                   v-model="reserveForm.age"
+                  @focus="formClicked=true"
                 )
                 span.input-group-text 歳
                 .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
@@ -66,7 +68,8 @@ section#reserve.main-section
                 type="email"
                 :class="{ 'is-invalid': errors[0] }"
                 v-model="reserveForm.email"
-                )
+                @focus="formClicked=true"
+              )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
             validation-provider(
@@ -81,11 +84,16 @@ section#reserve.main-section
                 type="tel"
                 :class="{ 'is-invalid': errors[0] }"
                 v-model="reserveForm.tel"
+                @focus="formClicked=true"
               )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
             label.form-label(for="reseveMessage") ご質問など
-            textarea#reseveMessage.form-control(rows="5" v-model="reserveForm.message")
+            textarea#reseveMessage.form-control(
+              rows="5"
+              v-model="reserveForm.message"
+              @focus="formClicked=true"
+            )
           .mb-4
             validation-provider(
               v-slot="{ errors }"
@@ -138,7 +146,8 @@ export default {
         tel: "",
         message: "",
         policy: false,
-      }
+      },
+      formClicked: false
     }
   },
   methods: {
@@ -221,6 +230,15 @@ https://${process.env.domain}
       this.$refs.reserveForm.reset()
     },
   },
+  watch: {
+    formClicked: () => {
+      window.dataLayer = window.dataLayer || []
+      dataLayer.push({
+        'trackReserve': '/reserve/input',
+        'event': 'loadready',
+      })
+    }
+  }
 }
 </script>
 
