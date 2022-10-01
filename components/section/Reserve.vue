@@ -190,7 +190,7 @@ https://${process.env.domain}
         );
         window.dataLayer = window.dataLayer || []
         dataLayer.push({
-          'trackReserveComplete': '/reserve/complete',
+          'trackReserve': '/reserve/complete',
           'event': 'loadready',
         })
         this.$toast.success(
