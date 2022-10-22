@@ -6,28 +6,20 @@ section#faq.main-section
       .offset-lg-2.col-lg-8.offset-1.col-10
         .faq-list
           .faq-item(v-for="faq in faqList" :key="faq.question")
-            h3.section-subtitle.question Q. {{ faq.question }}
+            h3.section-subtitle.question Q. {{ faq.fields.question }}
             .answer
               span.me-2 A.
-              span {{ faq.answer }}
+              span {{ faq.fields.answer }}
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      faqList: [
-        {
-          question: "食事指導はありますか？",
-          answer: "はい、食事指導はあります。「食べて痩せる」をコンセプトに、摂取カロリーと消費カロリーのバランスを管理する方針を取っています。"
-        },
-        {
-          question: "トレーニング時の持ち物はありますか？",
-          answer: "LIXAではトレーニングウェア、シューズ、タオル、プロテインなど必要なものはすべて無料貸出し & 無料提供しております。"
-        }
-      ]
+  props: {
+    faqList: {
+      type: Array,
+      required: true,
     }
-  }
+  },
 }
 </script>
 

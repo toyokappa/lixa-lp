@@ -4,7 +4,7 @@ div
   section-about
   section-trainers(:trainers="trainers")
   section-program
-  section-faq(:faq-list="faqList")
+  section-faq(:faqList="faqList")
   section-access
   section-reserve
 </template>
