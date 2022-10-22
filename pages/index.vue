@@ -2,16 +2,33 @@
 div
   section-hero
   section-about
-  section-trainers
+  section-trainers(:trainers="trainers")
   section-program
-  section-faq
+  section-faq(:faq-list="faqList")
   section-access
   section-reserve
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  async asyncData({ app }) {
+    const trainerRes = await app.$ctfClient.getEntries({
+      content_type: "trainer",
+      order: "sys.createdAt"
+    })
+    const trainers = trainerRes.items
+
+    const faqRes = await app.$ctfClient.getEntries({
+      content_type: "faq"
+    })
+    const faqList = faqRes.items
+
+    return {
+      trainers,
+      faqList,
+    }
+  }
 }
 </script>
 

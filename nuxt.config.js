@@ -37,6 +37,8 @@ export default {
     ]
   },
   env: {
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
     mailgunKey: process.env.MAILGUN_KEY,
     mailBcc: process.env.MAIL_BCC,
     host,
@@ -54,6 +56,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/burger', ssr: false },
+    { src: '~/plugins/contentful' },
     '@/plugins/mailgun',
     '@/plugins/validate',
   ],
