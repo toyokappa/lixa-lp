@@ -48,6 +48,7 @@ export default {
       max-width: 160px
       height: auto
       margin-bottom: 10px
+      border-radius: 50%
     .name
 .ads-recruit
   max-width: 100%
