@@ -298,8 +298,8 @@ https://${process.env.domain}
           width: 24px
           height: 24px
           border-radius: 50%
-          line-height: 22px
-          &::before
+          line-height: 24px
+          padding-right: 0.125rem
         .merit-title
           color: $accent-color
           font-weight: bold
