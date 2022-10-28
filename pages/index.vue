@@ -13,13 +13,13 @@ div
 export default {
   name: 'IndexPage',
   async asyncData({ app }) {
-    const trainerRes = await app.$ctfClient.getEntries({
+    const trainerRes = await app.$ctfCdaClient.getEntries({
       content_type: "trainer",
       order: "fields.position"
     })
     const trainers = trainerRes.items
 
-    const faqRes = await app.$ctfClient.getEntries({
+    const faqRes = await app.$ctfCdaClient.getEntries({
       content_type: "faq"
     })
     const faqList = faqRes.items

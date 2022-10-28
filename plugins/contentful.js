@@ -1,11 +1,11 @@
-import * as contentful from 'contentful'
+import * as ctfCda from 'contentful'
 
 export default (context, inject) => {
-  const config = {
+  const cdaConfig = {
     space: context.env.ctfSpaceId,
     accessToken: context.env.ctfCdaAccessToken
   }
 
-  const ctfClient = contentful.createClient(config)
-  inject('ctfClient', ctfClient)
+  const ctfCdaClient = ctfCda.createClient(cdaConfig)
+  inject('ctfCdaClient', ctfCdaClient)
 }

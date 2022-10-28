@@ -193,6 +193,7 @@ https://${process.env.domain}
 `,
       };
       try {
+        await this.appendCustomer()
         await this.$mgClient.messages.create(
           `mg.${process.env.host}`,
           mailOption
@@ -217,6 +218,31 @@ https://${process.env.domain}
       } finally {
         this.$nuxt.$loading.finish();
       }
+    },
+    appendCustomer() {
+      const { name, age, email, tel, message } = this.reserveForm;
+      this.$ctfCmaClient.createEntry(
+        'customer',
+        {
+          fields: {
+            name: {
+              'en-US': name,
+            },
+            age: {
+              'en-US': parseInt(age),
+            },
+            email: {
+              'en-US': email,
+            },
+            tel: {
+              'en-US': tel,
+            },
+            message: {
+              'en-US': message,
+            }
+          }
+        }
+      )
     },
     resetForm() {
       this.reserveForm = {
