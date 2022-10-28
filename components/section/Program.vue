@@ -21,7 +21,7 @@ section#program.main-section.bg-base
           .row.align-items-center
             .col-5 コース料金
             .col-7
-              span.value.text-original 160,000
+              span.value.text-original 192,000
               span.unit 円(税込)
           .course-menu 全16回 (1回60分)
         .caption ※ LIXAを気に入っていただいた方へ2ヶ月後のコースもご用意しております。
