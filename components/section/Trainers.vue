@@ -5,7 +5,7 @@ section#trainers.main-section
     .row
       .col-lg-8.offset-lg-2.col-12
         .row.trainers
-          .col-lg-4.col-6.trainer.mb-lg-0.mb-5(v-for="trainer in trainers" :key="trainer.sys.id")
+          .col-lg-3.col-6.trainer.mb-lg-0.mb-5(v-for="trainer in trainers" :key="trainer.sys.id")
             img.photo(:src="trainerPhoto(trainer)" :alt="trainer.fields.name")
             .name {{ trainer.fields.name }}
     .text-center

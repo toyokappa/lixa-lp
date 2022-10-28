@@ -15,7 +15,7 @@ export default {
   async asyncData({ app }) {
     const trainerRes = await app.$ctfClient.getEntries({
       content_type: "trainer",
-      order: "sys.createdAt"
+      order: "fields.position"
     })
     const trainers = trainerRes.items
 
