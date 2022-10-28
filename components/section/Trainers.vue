@@ -7,9 +7,10 @@ section#trainers.main-section
         .row.trainers
           .col-lg-3.col-6.trainer.mb-lg-0.mb-5(v-for="trainer in trainers" :key="trainer.sys.id")
             img.photo(:src="trainerPhoto(trainer)" :alt="trainer.fields.name")
+            .title {{ trainer.fields.title }}
             .name {{ trainer.fields.name }}
     .text-center
-      a(href="https://indeedhi.re/3dZowRY" target="_blank" rel="noopener")
+      a(href="https://en-gage.net/lixa/" target="_blank" rel="noopener")
         img.ads-recruit(src="@/assets/images/ads-recruit.png" alt="求人広告")
 </template>
 
@@ -50,6 +51,7 @@ export default {
       margin-bottom: 10px
       border-radius: 50%
     .name
+      font-weight: bold
 .ads-recruit
   max-width: 100%
 </style>

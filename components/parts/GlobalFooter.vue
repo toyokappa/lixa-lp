@@ -3,7 +3,7 @@ footer
   .container
     .footer-menu.row.gy-lg-0.gy-4
       .col-lg-7.col-12
-        a.ads(href="https://indeedhi.re/3dZowRY" target="_blank" rel="noopener")
+        a.ads(href="https://en-gage.net/lixa/" target="_blank" rel="noopener")
           img.ads-recruit(src="@/assets/images/ads-recruit.png" alt="求人バナー")
       .col-lg-5.col-12
         .row
