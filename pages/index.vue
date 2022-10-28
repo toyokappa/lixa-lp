@@ -20,7 +20,8 @@ export default {
     const trainers = trainerRes.items
 
     const faqRes = await app.$ctfCdaClient.getEntries({
-      content_type: "faq"
+      content_type: "faq",
+      order: "fields.position"
     })
     const faqList = faqRes.items
 
