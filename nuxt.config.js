@@ -58,6 +58,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/burger', ssr: false },
+    { src: '@/plugins/bootstrap', ssr: false },
     { src: '~/plugins/contentful' },
     { src: '~/plugins/contentful-management' },
     '@/plugins/mailgun',

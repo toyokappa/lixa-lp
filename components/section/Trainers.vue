@@ -5,13 +5,37 @@ section#trainers.main-section
     .row
       .col-lg-8.offset-lg-2.col-12
         .row.trainers
-          .col-lg-3.col-6.trainer.mb-lg-0.mb-5(v-for="trainer in trainers" :key="trainer.sys.id")
+          .col-lg-3.col-6.trainer.mb-lg-0.mb-5(
+            v-for="trainer in trainers"
+            :key="trainer.sys.id"
+            @click="showModal(trainer)"
+          )
             img.photo(:src="trainerPhoto(trainer)" :alt="trainer.fields.name")
             .title {{ trainer.fields.title }}
             .name {{ trainer.fields.name }}
     .text-center
       a(href="https://en-gage.net/lixa/" target="_blank" rel="noopener")
         img.ads-recruit(src="@/assets/images/ads-recruit.png" alt="求人広告")
+  #trainerModal.trainer-modal.modal.fade(ref="trainerModal")
+    .modal-dialog.modal-lg.modal-dialog-centered
+      .modal-content.overflow-hidden
+        .modal-body.p-0
+          .container-fluid
+            .row(v-if="currentTrainer")
+              .col-lg-6.p-0.position-relative
+                img.photo(:src="trainerPhoto(currentTrainer)")
+                n-link.cta(
+                  v-scroll-to="{ el: '#reserve', onStart: () => trainerModal.hide() }"
+                  to
+                )
+                  .cta-set
+                    .text オープン前予約で
+                    .action オトクな特典をGET!!
+                  .text 予約フォームはコチラ
+              .col-lg-6.p-3
+                .name {{ currentTrainer.fields.name }}
+                .title.mb-3 {{ currentTrainer.fields.title }}
+                .profile(v-text="currentTrainer.fields.profile" style="white-space: pre-wrap;")
 </template>
 
 <script>
@@ -27,9 +51,18 @@ export default {
   data() {
     return {
       noTrainerPhoto,
+      currentTrainer: null,
+      trainerModal: null,
     }
   },
+  mounted() {
+    this.trainerModal = new this.$bsModal(this.$refs.trainerModal)
+  },
   methods: {
+    showModal(trainer) {
+      this.currentTrainer = trainer
+      this.trainerModal.show()
+    },
     trainerPhoto(trainer) {
       return trainer.fields.photo?.fields.file.url || this.noTrainerPhoto
     }
@@ -54,4 +87,33 @@ export default {
       font-weight: bold
 .ads-recruit
   max-width: 100%
+.trainer-modal
+  .photo
+    width: 100%
+    height: auto
+  .cta
+    font-weight: bold
+    color: white
+    text-decoration: none
+    width: 100%
+    z-index: 1
+    display: block
+    background: linear-gradient(to right, #FFC226, $accent-color)
+    padding: 10px 20px
+
+    position: absolute
+    bottom: 0px
+    left: 0px
+    .text
+      display: inline
+      font-size: 14px
+    .action
+      display: inline
+      font-size: 20px
+  .name
+    font-size: 24px
+    font-weight: bold
+  .title
+    font-weight: bold
+  .profile
 </style>
