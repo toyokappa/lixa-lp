@@ -36,7 +36,10 @@ section#trainers.main-section
                 .name {{ currentTrainer.fields.name }}
                 .title.mb-3 {{ currentTrainer.fields.title }}
                 .profile(v-text="currentTrainer.fields.profile" style="white-space: pre-wrap;")
-            .close(@click="trainerModal.hide()") ✗
+            img.close(
+              src="@/assets/images/close.svg"
+              @click="trainerModal.hide()"
+            )
 </template>
 
 <script>
@@ -112,15 +115,8 @@ export default {
       display: inline
       font-size: 20px
   .close
-    color: white
-    font-size: 18px
-    font-weight: bold
-    text-align: center
-    line-height: 30px
-    background-color: $accent-color
     width: 30px
     height: 30px
-    border-radius: 50%
 
     position: absolute
     top: 10px
