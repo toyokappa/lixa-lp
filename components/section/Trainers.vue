@@ -20,8 +20,8 @@ section#trainers.main-section
     .modal-dialog.modal-lg.modal-dialog-centered
       .modal-content.overflow-hidden
         .modal-body.p-0
-          .container-fluid
-            .row(v-if="currentTrainer")
+          .container-fluid.position-relative(v-if="currentTrainer")
+            .row
               .col-lg-6.p-0.position-relative
                 img.photo(:src="trainerPhoto(currentTrainer)")
                 n-link.cta(
@@ -32,11 +32,11 @@ section#trainers.main-section
                     .text オープン前予約で
                     .action オトクな特典をGET!!
                   .text 予約フォームはコチラ
-                .close(@click="trainerModal.hide()") ✗
               .col-lg-6.p-3
                 .name {{ currentTrainer.fields.name }}
                 .title.mb-3 {{ currentTrainer.fields.title }}
                 .profile(v-text="currentTrainer.fields.profile" style="white-space: pre-wrap;")
+            .close(@click="trainerModal.hide()") ✗
 </template>
 
 <script>
