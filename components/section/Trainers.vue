@@ -32,6 +32,7 @@ section#trainers.main-section
                     .text オープン前予約で
                     .action オトクな特典をGET!!
                   .text 予約フォームはコチラ
+                .close(@click="trainerModal.hide()") ✗
               .col-lg-6.p-3
                 .name {{ currentTrainer.fields.name }}
                 .title.mb-3 {{ currentTrainer.fields.title }}
@@ -110,6 +111,20 @@ export default {
     .action
       display: inline
       font-size: 20px
+  .close
+    color: white
+    font-size: 18px
+    font-weight: bold
+    text-align: center
+    line-height: 30px
+    background-color: $accent-color
+    width: 30px
+    height: 30px
+    border-radius: 50%
+
+    position: absolute
+    top: 10px
+    right: 10px
   .name
     font-size: 24px
     font-weight: bold
