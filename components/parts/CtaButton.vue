@@ -4,6 +4,11 @@ n-link.top-cta(v-scroll-to="'#reserve'" to)
     .text オープン前予約で
     .action {{ ctaAction }}
   .text 予約フォームはコチラ
+  .cta-animation-box
+    .cta-animation
+    .cta-animation
+    .cta-animation
+    .cta-animation
 </template>
 
 <script>
@@ -54,10 +59,12 @@ export default {
     display: block
     background: linear-gradient(to right, #FFC226, $accent-color)
     padding: 10px 20px
+    position: relative
     .text
       display: inline
       font-size: 14px
     .action
       display: inline
       font-size: 20px
+    @include line-move
 </style>

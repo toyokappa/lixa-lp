@@ -7,6 +7,11 @@ n-link.cta(
     .text オープン前予約で
     .action {{ ctaAction }}
   .text 予約フォームはコチラ
+  .cta-animation-box
+    .cta-animation
+    .cta-animation
+    .cta-animation
+    .cta-animation
 </template>
 
 <script>
@@ -55,4 +60,5 @@ export default {
   .action
     display: inline
     font-size: 20px
+  @include line-move
 </style>
