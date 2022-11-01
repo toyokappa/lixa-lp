@@ -37,24 +37,24 @@ section#reserve.main-section
                 @focus="formClicked=true"
               )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-          .mb-4
-            validation-provider(
-              v-slot="{ errors }"
-              rules="required"
-              name="ご年齢"
-            )
-              label.form-label(for="reseveAge")
-                span.me-2 ご年齢
-                span.badge.bg-original 必須
-              .input-group.align-items-center
-                input#reseveAge.form-control(
-                  type="number"
-                  :class="{ 'is-invalid': errors[0] }"
-                  v-model="reserveForm.age"
-                  @focus="formClicked=true"
-                )
-                span.input-group-text 歳
-                .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          //- .mb-4
+          //-   validation-provider(
+          //-     v-slot="{ errors }"
+          //-     rules="required"
+          //-     name="ご年齢"
+          //-   )
+          //-     label.form-label(for="reseveAge")
+          //-       span.me-2 ご年齢
+          //-       span.badge.bg-original 必須
+          //-     .input-group.align-items-center
+          //-       input#reseveAge.form-control(
+          //-         type="number"
+          //-         :class="{ 'is-invalid': errors[0] }"
+          //-         v-model="reserveForm.age"
+          //-         @focus="formClicked=true"
+          //-       )
+          //-       span.input-group-text 歳
+          //-       .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
             validation-provider(
               v-slot="{ errors }"
@@ -71,22 +71,22 @@ section#reserve.main-section
                 @focus="formClicked=true"
               )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-          .mb-4
-            validation-provider(
-              v-slot="{ errors }"
-              rules="required|phone"
-              name="お電話番号"
-            )
-              label.form-label(for="reseveTel")
-                span.me-2 お電話番号
-                span.badge.bg-original 必須
-              input#reseveTel.form-control(
-                type="tel"
-                :class="{ 'is-invalid': errors[0] }"
-                v-model="reserveForm.tel"
-                @focus="formClicked=true"
-              )
-              .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          //- .mb-4
+          //-   validation-provider(
+          //-     v-slot="{ errors }"
+          //-     rules="required|phone"
+          //-     name="お電話番号"
+          //-   )
+          //-     label.form-label(for="reseveTel")
+          //-       span.me-2 お電話番号
+          //-       span.badge.bg-original 必須
+          //-     input#reseveTel.form-control(
+          //-       type="tel"
+          //-       :class="{ 'is-invalid': errors[0] }"
+          //-       v-model="reserveForm.tel"
+          //-       @focus="formClicked=true"
+          //-     )
+          //-     .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
             label.form-label(for="reseveMessage") ご質問など
             textarea#reseveMessage.form-control(
@@ -143,9 +143,9 @@ export default {
       ],
       reserveForm: {
         name: "",
-        age: null,
+        // age: null,
         email: "",
-        tel: "",
+        // tel: "",
         message: "",
         policy: false,
       },
@@ -154,7 +154,7 @@ export default {
   },
   methods: {
     async sendMail() {
-      const { name, age, email, tel, message } = this.reserveForm;
+      const { name, email, message } = this.reserveForm;
       this.$nuxt.$loading.start();
       const mailOption = {
         from: `${process.env.projectName} オープン前予約フォーム <info@${process.env.host}>`,
@@ -169,14 +169,8 @@ export default {
 # お名前
 ${name} 様
 
-# ご年齢
-${age} 歳
-
 # メールアドレス
 ${email}
-
-# お電話番号
-${tel}
 
 # 内容
 ${message}
@@ -222,7 +216,7 @@ https://${process.env.domain}
       }
     },
     appendCustomer() {
-      const { name, age, email, tel, message } = this.reserveForm;
+      const { name, email, message } = this.reserveForm;
       this.$ctfCmaClient.createEntry(
         'customer',
         {
@@ -230,15 +224,15 @@ https://${process.env.domain}
             name: {
               'en-US': name,
             },
-            age: {
-              'en-US': parseInt(age),
-            },
+            // age: {
+            //   'en-US': parseInt(age),
+            // },
             email: {
               'en-US': email,
             },
-            tel: {
-              'en-US': tel,
-            },
+            // tel: {
+            //   'en-US': tel,
+            // },
             message: {
               'en-US': message,
             }
@@ -249,9 +243,9 @@ https://${process.env.domain}
     resetForm() {
       this.reserveForm = {
         name: "",
-        age: null,
+        // age: null,
         email: "",
-        tel: "",
+        // tel: "",
         message: "",
         policy: false
       };
