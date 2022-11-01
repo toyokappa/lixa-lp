@@ -24,7 +24,10 @@ section#trainers.main-section
             .row
               .col-lg-6.p-0.position-relative
                 img.photo(:src="trainerPhoto(currentTrainer)")
-                parts-cta-button-sm(:onStart="() => trainerModal.hide()")
+                parts-cta-button-sm(
+                  :withFree="withFree"
+                  :onStart="() => trainerModal.hide()"
+                )
               .col-lg-6.p-3
                 .name {{ currentTrainer.fields.name }}
                 .title.mb-3 {{ currentTrainer.fields.title }}
@@ -43,6 +46,11 @@ export default {
     trainers: {
       type: Array,
       required: true
+    },
+    withFree: {
+      type: Boolean,
+      default: false,
+      required: false,
     }
   },
   data() {

@@ -14,8 +14,20 @@ section#hero
     div
       span.value 前橋
       span.unit にオープン予定！
-  parts-cta-button
+  parts-cta-button(:withFree="withFree")
 </template>
+
+<script>
+export default {
+  props: {
+    withFree: {
+      type: Boolean,
+      default: false,
+      required: false,
+    }
+  },
+}
+</script>
 
 <style lang="sass" scoped>
 #hero
