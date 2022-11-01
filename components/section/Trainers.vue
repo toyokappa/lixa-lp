@@ -24,14 +24,7 @@ section#trainers.main-section
             .row
               .col-lg-6.p-0.position-relative
                 img.photo(:src="trainerPhoto(currentTrainer)")
-                n-link.cta(
-                  v-scroll-to="{ el: '#reserve', onStart: () => trainerModal.hide() }"
-                  to
-                )
-                  .cta-set
-                    .text オープン前予約で
-                    .action オトクな特典をGET!!
-                  .text 予約フォームはコチラ
+                parts-cta-button-sm(:onStart="() => trainerModal.hide()")
               .col-lg-6.p-3
                 .name {{ currentTrainer.fields.name }}
                 .title.mb-3 {{ currentTrainer.fields.title }}
