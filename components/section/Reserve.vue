@@ -119,7 +119,8 @@ section#reserve.main-section
               type="submit"
               :disabled="invalid"
             ) 上記の内容で申し込む
-  parts-contact-for-tel
+  parts-contact-for-tel.mb-4
+  parts-contact-for-line
 </template>
 
 <script>
