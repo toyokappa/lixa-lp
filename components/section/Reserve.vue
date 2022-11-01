@@ -1,7 +1,7 @@
 <template lang="pug">
 section#reserve.main-section
   h2.section-title オープン前予約
-  .container-fluid.gx-lg-4.gx-0
+  .container-fluid.gx-lg-4.gx-0.mb-5
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
       .offset-lg-1.col-lg-5.col-12
         .reserve-explanation
@@ -119,6 +119,7 @@ section#reserve.main-section
               type="submit"
               :disabled="invalid"
             ) 上記の内容で申し込む
+  parts-contact-for-tel
 </template>
 
 <script>
