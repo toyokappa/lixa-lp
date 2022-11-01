@@ -1,7 +1,7 @@
 <template lang="pug">
 n-link.top-cta(v-scroll-to="'#reserve'" to)
   .cta-set
-    .text {{ ctaText }}
+    .text オープン前予約で
     .action {{ ctaAction }}
   .text 予約フォームはコチラ
 </template>
@@ -15,11 +15,8 @@ export default {
     }
   },
   computed: {
-    ctaText() {
-      return this.withFree ? '今ならオープン前予約で' : 'オープン前予約で'
-    },
     ctaAction() {
-      return this.withFree ? '入会金が無料に!!' : 'オトクな特典をGET!!'
+      return this.withFree ? '今なら入会金が無料!!' : 'オトクな特典をGET!!'
     },
   }
 }

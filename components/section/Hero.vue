@@ -2,8 +2,8 @@
 section#hero
   img.hero-image(src="@/assets/images/hero.jpeg")
   h1.main-copy
-    span 群馬初！女性トレーナーのみ
-    span 男性向け完全個室パーソナルジム
+    span 群馬初、女性トレーナーのみ！
+    span 男性専用パーソナルジム
   .sub-copy 女性目線の徹底指導で"モテ"ボディメイク
   .open-info
     div

@@ -4,7 +4,7 @@ n-link.cta(
   to
 )
   .cta-set
-    .text {{ ctaText }}
+    .text オープン前予約で
     .action {{ ctaAction }}
   .text 予約フォームはコチラ
 </template>
@@ -28,11 +28,8 @@ export default {
 
       return options
     },
-    ctaText() {
-      return this.withFree ? '今ならオープン前予約で' : 'オープン前予約で'
-    },
     ctaAction() {
-      return this.withFree ? '入会金が無料に!!' : 'オトクな特典をGET!!'
+      return this.withFree ? '今なら入会金が無料!!' : 'オトクな特典をGET!!'
     },
   }
 }
