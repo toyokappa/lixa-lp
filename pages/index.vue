@@ -1,11 +1,11 @@
 <template lang="pug">
 div
-  section-hero
+  section-hero(:withFree="true")
   section-about
-  section-trainers(:trainers="trainers")
+  section-trainers(:trainers="trainers" :withFree="true")
   section-program
   section-faq(:faqList="faqList")
-  section-access
+  section-access(:withFree="true")
   section-reserve
 </template>
 
