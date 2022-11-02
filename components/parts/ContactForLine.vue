@@ -1,9 +1,28 @@
 <template lang="pug">
 .contact-for-tel
-  a.line.d-flex.align-items-center.justify-content-center.mb-3(href="https://lin.ee/74XW3Em")
+  a.line.d-flex.align-items-center.justify-content-center.mb-3(
+    href="https://lin.ee/74XW3Em"
+    target="_blank"
+    rel="noopener"
+    @click="trackLineClick()"
+  )
     img(src="@/assets/images/line.png")
     .action LINEでのお問い合わせはコチラ
 </template>
+
+<script>
+export default {
+  methods: {
+    trackLineClick() {
+      window.dataLayer = window.dataLayer || []
+      dataLayer.push({
+        'trackReserve': '/reserve/click_line_button',
+        'event': 'loadready',
+      })
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .contact-for-tel
