@@ -1,6 +1,7 @@
 <template lang="pug">
 div
   section-hero-for-monitor(:withFree="true")
+  section-about-monitor
   section-about
   section-trainers(:trainers="trainers" :withFree="true")
   section-program
