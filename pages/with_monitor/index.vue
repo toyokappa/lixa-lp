@@ -4,7 +4,7 @@ div
   section-about-monitor
   section-about
   section-trainers(:trainers="trainers" :withFree="true")
-  section-program
+  section-program-for-monitor
   section-faq(:faqList="faqList")
   section-access(:withFree="true")
   section-reserve
