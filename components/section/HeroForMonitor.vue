@@ -39,8 +39,8 @@ section#hero
     left: 470px
     @include media-breakpoint-down(md)
       width: 100px
-      bottom: 200px
-      left: 240px
+      bottom: 140px
+      left: 230px
   .main-copy
     font-size: 64px
     font-weight: bold
@@ -51,8 +51,8 @@ section#hero
     left: 40px
     @include media-breakpoint-down(md)
       font-size: 32px
-      left: 30px
-      bottom: 150px
+      left: 20px
+      bottom: 90px
     .catch
       color: #ffd600
   .sub-copy
@@ -67,6 +67,7 @@ section#hero
     margin-bottom: 0
     @include media-breakpoint-down(md)
       font-size: 20px
-      left: 30px
-      bottom: 200px
+      text-shadow: 2px 2px 0 black
+      left: 20px
+      bottom: 140px
 </style>

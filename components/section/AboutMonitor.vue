@@ -17,7 +17,7 @@ section#aboutMonitor.main-section(:class="{ 'bg-base': isBase }")
             .col-4 募集人数:
             .col-8 2名
           .row.gx-0.align-items-top.mb-2
-            .col-4 モニター期間:
+            .col-4 実施期間:
             .col-8 11月下旬〜翌年1月下旬（約2ヶ月間）
           .row.gx-0.align-items-top.mb-2
             .col-4 場所:
