@@ -23,18 +23,6 @@ section#hero
     .text 応募フォームはコチラ
 </template>
 
-<script>
-export default {
-  props: {
-    withFree: {
-      type: Boolean,
-      default: false,
-      required: false,
-    }
-  },
-}
-</script>
-
 <style lang="sass" scoped>
 #hero
   position: relative

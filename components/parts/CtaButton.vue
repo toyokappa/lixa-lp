@@ -2,7 +2,7 @@
 n-link.top-cta(v-scroll-to="'#reserve'" to)
   .cta-set
     .text オープン前予約で
-    .action {{ ctaAction }}
+    .action 今なら入会金が無料!!
   .text 予約フォームはコチラ
   .cta-animation-box
     .cta-animation
@@ -10,22 +10,6 @@ n-link.top-cta(v-scroll-to="'#reserve'" to)
     .cta-animation
     .cta-animation
 </template>
-
-<script>
-export default {
-  props: {
-    withFree: {
-      type: Boolean,
-      default: false,
-    }
-  },
-  computed: {
-    ctaAction() {
-      return this.withFree ? '今なら入会金が無料!!' : 'オトクな特典をGET!!'
-    },
-  }
-}
-</script>
 
 <style lang="sass" scoped>
 .top-cta

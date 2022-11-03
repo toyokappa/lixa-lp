@@ -13,17 +13,12 @@ section#access.main-section(:class="{ 'bg-base': isBase }")
         div
           span.value 前橋
           span.unit にオープン予定！
-    parts-cta-button(:withFree="withFree")
+    parts-cta-button
 </template>
 
 <script>
 export default {
   props: {
-    withFree: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
     isBase: {
       type: Boolean,
       default: false,

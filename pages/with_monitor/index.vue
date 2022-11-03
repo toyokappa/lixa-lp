@@ -1,9 +1,9 @@
 <template lang="pug">
 div
-  section-hero-for-monitor(:withFree="true")
+  section-hero-for-monitor
   section-about-monitor
   section-about(:isBase="true")
-  section-trainers(:trainers="trainers" :withFree="true")
+  section-trainers(:trainers="trainers")
   section-program-for-monitor(:isBase="true")
   section-condition(:conditionList="conditionList")
   section-faq(:faqList="faqList" :isBase="true")

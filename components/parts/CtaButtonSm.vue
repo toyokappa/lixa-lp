@@ -5,7 +5,7 @@ n-link.cta(
 )
   .cta-set
     .text オープン前予約で
-    .action {{ ctaAction }}
+    .action 今なら入会金が無料!!
   .text 予約フォームはコチラ
   .cta-animation-box
     .cta-animation
@@ -21,10 +21,6 @@ export default {
       type: Function,
       required: false
     },
-    withFree: {
-      type: Boolean,
-      default: false,
-    }
   },
   computed: {
     scrollOptions() {
@@ -32,9 +28,6 @@ export default {
       if (this.onStart) options.onStart = () => this.onStart()
 
       return options
-    },
-    ctaAction() {
-      return this.withFree ? '今なら入会金が無料!!' : 'オトクな特典をGET!!'
     },
   }
 }

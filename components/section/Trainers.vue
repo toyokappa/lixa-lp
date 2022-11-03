@@ -25,7 +25,6 @@ section#trainers.main-section(:class="{ 'bg-base': isBase }")
               .col-lg-6.p-0.position-relative
                 img.photo(:src="trainerPhoto(currentTrainer)")
                 parts-cta-button-sm(
-                  :withFree="withFree"
                   :onStart="() => trainerModal.hide()"
                 )
               .col-lg-6.p-3
@@ -46,11 +45,6 @@ export default {
     trainers: {
       type: Array,
       required: true
-    },
-    withFree: {
-      type: Boolean,
-      default: false,
-      required: false,
     },
     isBase: {
       type: Boolean,
