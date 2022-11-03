@@ -2,7 +2,7 @@
 section#condition.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title
     .mb-4 モニターへのご応募にあたり
-    .section-subtitle 以下の条件を満たしていただくことが条件となります。
+    .section-subtitle 以下の応募条件をご確認くださいませ。
   .container-fluid.gx-0
     .row.gx-0
       .offset-lg-3.col-lg-6.offset-1.col-10
