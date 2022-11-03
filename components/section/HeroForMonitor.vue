@@ -10,17 +10,7 @@ section#hero
   h1.main-copy
     span.catch 無料モニター
     span.text 募集中！
-  n-link.cta(v-scroll-to="'#reserve'" to)
-    .cta-set
-      .text 無料モニター応募締め切りまで
-      .limit
-        span.value 11
-        span.unit 月
-        span.value 11
-        span.unit.me-2 日(金)
-        span.value 23:59
-        span.unit まで
-    .text 応募フォームはコチラ
+  parts-cta-button-for-monitor
 </template>
 
 <style lang="sass" scoped>
