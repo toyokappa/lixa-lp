@@ -50,4 +50,6 @@ n-link.cta(v-scroll-to="'#reserve'" to)
           font-size: 24px
         .unit
           font-size: 12px
+  &:hover
+    color: black
 </style>

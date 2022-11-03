@@ -24,7 +24,12 @@ section#trainers.main-section(:class="{ 'bg-base': isBase }")
             .row
               .col-lg-6.p-0.position-relative
                 img.photo(:src="trainerPhoto(currentTrainer)")
+                parts-cta-button-for-monitor-sm(
+                  v-if="isMonitor"
+                  :onStart="() => trainerModal.hide()"
+                )
                 parts-cta-button-sm(
+                  v-else
                   :onStart="() => trainerModal.hide()"
                 )
               .col-lg-6.p-3
@@ -47,6 +52,10 @@ export default {
       required: true
     },
     isBase: {
+      type: Boolean,
+      default: false,
+    },
+    isMonitor: {
       type: Boolean,
       default: false,
     }
@@ -94,25 +103,6 @@ export default {
   .photo
     width: 100%
     height: auto
-  .cta
-    font-weight: bold
-    color: white
-    text-decoration: none
-    width: 100%
-    z-index: 1
-    display: block
-    background: linear-gradient(to right, #FFC226, $accent-color)
-    padding: 10px 20px
-
-    position: absolute
-    bottom: 0px
-    left: 0px
-    .text
-      display: inline
-      font-size: 14px
-    .action
-      display: inline
-      font-size: 20px
   .close
     width: 30px
     height: 30px

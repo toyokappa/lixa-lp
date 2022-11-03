@@ -3,7 +3,7 @@ div
   section-hero-for-monitor
   section-about-monitor
   section-about(:isBase="true")
-  section-trainers(:trainers="trainers")
+  section-trainers(:trainers="trainers" :isMonitor="true")
   section-program-for-monitor(:isBase="true")
   section-condition(:conditionList="conditionList")
   section-faq(:faqList="faqList" :isBase="true")
