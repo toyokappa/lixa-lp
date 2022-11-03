@@ -37,6 +37,10 @@ section#hero
     position: absolute
     bottom: 120px
     left: 470px
+    @include media-breakpoint-down(md)
+      width: 100px
+      bottom: 200px
+      left: 240px
   .main-copy
     font-size: 64px
     font-weight: bold
@@ -46,8 +50,9 @@ section#hero
     bottom: 20px
     left: 40px
     @include media-breakpoint-down(md)
-      font-size: 14px
-      bottom: 145px
+      font-size: 32px
+      left: 30px
+      bottom: 150px
     .catch
       color: #ffd600
   .sub-copy
@@ -61,27 +66,7 @@ section#hero
     left: 40px
     margin-bottom: 0
     @include media-breakpoint-down(md)
-      font-size: 16px
-      bottom: 210px
-  .cta
-    color: black
-    font-weight: bold
-    text-align: right
-    text-decoration: none
-    background-color: #ffd600
-    padding: 20px 40px
-    border-radius: 5px
-    box-shadow: 10px 8px black
-
-    position: absolute
-    bottom: 30px
-    right: 40px
-    .text
-      font-size: 24px
-    .cta-set
-      .limit
-        .value
-          font-size: 40px
-        .unit
-          font-size: 24px
+      font-size: 20px
+      left: 30px
+      bottom: 200px
 </style>

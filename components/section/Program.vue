@@ -1,11 +1,11 @@
 <template lang="pug">
 section#program.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title コース・料金
-  .container-fluid.gx-lg-4.gx-0
+  .container
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
       .offset-lg-1.col-lg-5.col-12
         img.imagine(src="@/assets/images/course.jpeg" alt="2ヶ月後のイメージ")
-      .offset-lg-0.col-lg-5.offset-1.col-10
+      .col-lg-5.col-12
         .section-subtitle 2ヶ月コース
         h3.section-subtitle.text-original.mb-4 短期集中で理想のモテボディへ。
         .proposal
@@ -56,7 +56,7 @@ export default {
     font-size: 32px
     font-weight: bold
     @include media-breakpoint-down(md)
-      font-size: 28px
+      font-size: 24px
   .unit
     font-weight: bold
     @include media-breakpoint-down(md)
