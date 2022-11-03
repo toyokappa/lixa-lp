@@ -1,5 +1,6 @@
 <template lang="pug">
 div
+  parts-global-header(:menuList="menuList" cta="モニター応募")
   section-hero-for-monitor
   section-about-monitor
   section-about(:isBase="true")
@@ -8,11 +9,12 @@ div
   section-condition(:conditionList="conditionList")
   section-faq(:faqList="faqList" :isBase="true")
   section-reserve-for-monitor
+  parts-global-footer(:menuList="menuList" cta="モニター応募")
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'MonitorPage',
   async asyncData({ app }) {
     const trainerRes = await app.$ctfCdaClient.getEntries({
       content_type: "trainer",
@@ -38,7 +40,44 @@ export default {
       faqList,
       conditionList,
     }
+  },
+  data() {
+    return {
+      menuList: [
+        {
+          en: 'ABOUT',
+          ja: '募集要項',
+          link: '#aboutMonitor',
+        },
+        {
+          en: 'LIXA',
+          ja: 'LIXAとは',
+          link: '#about',
+        },
+        {
+          en: 'TRAINTERS',
+          ja: 'トレーナー紹介',
+          link: '#trainers',
+        },
+        {
+          en: 'PROGRAM',
+          ja: 'コース・料金',
+          link: '#program',
+        },
+        {
+          en: 'CONDITION',
+          ja: '応募条件',
+          link: '#condition',
+        },
+        {
+          en: 'Q&A',
+          ja: 'よくある質問',
+          link: '#faq',
+        },
+      ]
+    }
   }
+
 }
 </script>
 

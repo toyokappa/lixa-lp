@@ -10,8 +10,7 @@ header.header-nav.navbar.navbar-expand-lg.fixed-top
             .text-en {{ menu.en }}
             .text-ja {{ menu.ja }}
     .navbar-bland.cta
-      n-link(v-scroll-to="'#reserve'" to)
-        | オープン前予約
+      n-link(v-scroll-to="'#reserve'" to) {{ cta}}
     .menu-toggler
       client-only
         tasty-burger-button(
@@ -40,6 +39,10 @@ export default {
     menuList: {
       type: Array,
       required: true,
+    },
+    cta: {
+      type: String,
+      default: 'オープン前予約'
     }
   },
   methods: {

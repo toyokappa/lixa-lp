@@ -14,7 +14,7 @@ footer
           .col-6
             ul.sub-menu
               li.menu-item
-                n-link.menu-link(v-scroll-to="'#reserve'" to) オープン前予約
+                n-link.menu-link(v-scroll-to="'#reserve'" to) {{ cta }}
               li.menu-item
                 a.menu-link(
                   href="https://lixa.notion.site/c09f75afdb2540f58248f08c09ffb6dd"
@@ -39,6 +39,10 @@ export default {
     menuList: {
       type: Array,
       required: true,
+    },
+    cta: {
+      type: String,
+      default: 'オープン前予約'
     }
   }
 }
