@@ -21,6 +21,7 @@ export default {
 
     const faqRes = await app.$ctfCdaClient.getEntries({
       content_type: "faq",
+      'fields.category[in]': 'normal',
       order: "fields.position"
     })
     const faqList = faqRes.items

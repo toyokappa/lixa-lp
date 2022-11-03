@@ -5,6 +5,7 @@ div
   section-about
   section-trainers(:trainers="trainers" :withFree="true")
   section-program-for-monitor
+  section-condition(:conditionList="conditionList")
   section-faq(:faqList="faqList")
   section-access(:withFree="true")
   section-reserve
@@ -22,13 +23,21 @@ export default {
 
     const faqRes = await app.$ctfCdaClient.getEntries({
       content_type: "faq",
+      'fields.category[in]': 'monitor',
       order: "fields.position"
     })
     const faqList = faqRes.items
 
+    const conditionRes = await app.$ctfCdaClient.getEntries({
+      content_type: "condition",
+      order: "fields.position"
+    })
+    const conditionList = conditionRes.items
+
     return {
       trainers,
       faqList,
+      conditionList,
     }
   }
 }
