@@ -7,8 +7,7 @@ div
   section-program-for-monitor
   section-condition(:conditionList="conditionList")
   section-faq(:faqList="faqList")
-  section-access(:withFree="true")
-  section-reserve
+  section-reserve-for-monitor
 </template>
 
 <script>

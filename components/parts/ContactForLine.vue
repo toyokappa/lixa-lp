@@ -12,11 +12,18 @@
 
 <script>
 export default {
+  props: {
+    trackCd: {
+      type: String,
+      required: false,
+      default: 'reserve'
+    }
+  },
   methods: {
     trackLineClick() {
       window.dataLayer = window.dataLayer || []
       dataLayer.push({
-        'trackReserve': '/reserve/click_line_button',
+        'trackReserve': `/${this.trackCd}/click_line_button`,
         'event': 'loadready',
       })
     }

@@ -12,11 +12,18 @@
 
 <script>
 export default {
+  props: {
+    trackCd: {
+      type: String,
+      required: false,
+      default: 'reserve'
+    }
+  },
   methods: {
     trackTelClick() {
       window.dataLayer = window.dataLayer || []
       dataLayer.push({
-        'trackReserve': '/reserve/click_tel_number',
+        'trackReserve': `/${this.trackCd}/click_tel_number`,
         'event': 'loadready',
       })
     }

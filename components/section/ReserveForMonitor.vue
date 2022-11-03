@@ -1,13 +1,13 @@
 <template lang="pug">
 section#reserve.main-section
-  h2.section-title オープン前予約
+  h2.section-title モニター応募フォーム
   .container-fluid.gx-lg-4.gx-0.mb-5
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
       .offset-lg-1.col-lg-5.col-12
         .reserve-explanation
           img(src="@/assets/images/reserve-eyecatch.jpeg" alt="予約トップ画像")
           .reserve-merit
-            .title オープン前予約のメリット
+            .title モニター開始までの流れ
             .merit-item(v-for="(merit, index) in meritList" :key="merit.title")
               .merit-header
                 .merit-number.me-1 {{ index + 1 }}
@@ -37,24 +37,24 @@ section#reserve.main-section
                 @focus="formClicked=true"
               )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-          //- .mb-4
-          //-   validation-provider(
-          //-     v-slot="{ errors }"
-          //-     rules="required"
-          //-     name="ご年齢"
-          //-   )
-          //-     label.form-label(for="reseveAge")
-          //-       span.me-2 ご年齢
-          //-       span.badge.bg-original 必須
-          //-     .input-group.align-items-center
-          //-       input#reseveAge.form-control(
-          //-         type="number"
-          //-         :class="{ 'is-invalid': errors[0] }"
-          //-         v-model="reserveForm.age"
-          //-         @focus="formClicked=true"
-          //-       )
-          //-       span.input-group-text 歳
-          //-       .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="required"
+              name="ご年齢"
+            )
+              label.form-label(for="reseveAge")
+                span.me-2 ご年齢
+                span.badge.bg-original 必須
+              .input-group.align-items-center
+                input#reseveAge.form-control(
+                  type="number"
+                  :class="{ 'is-invalid': errors[0] }"
+                  v-model="reserveForm.age"
+                  @focus="formClicked=true"
+                )
+                span.input-group-text 歳
+                .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
             validation-provider(
               v-slot="{ errors }"
@@ -71,22 +71,22 @@ section#reserve.main-section
                 @focus="formClicked=true"
               )
               .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
-          //- .mb-4
-          //-   validation-provider(
-          //-     v-slot="{ errors }"
-          //-     rules="required|phone"
-          //-     name="お電話番号"
-          //-   )
-          //-     label.form-label(for="reseveTel")
-          //-       span.me-2 お電話番号
-          //-       span.badge.bg-original 必須
-          //-     input#reseveTel.form-control(
-          //-       type="tel"
-          //-       :class="{ 'is-invalid': errors[0] }"
-          //-       v-model="reserveForm.tel"
-          //-       @focus="formClicked=true"
-          //-     )
-          //-     .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+          .mb-4
+            validation-provider(
+              v-slot="{ errors }"
+              rules="required|phone"
+              name="お電話番号"
+            )
+              label.form-label(for="reseveTel")
+                span.me-2 お電話番号
+                span.badge.bg-original 必須
+              input#reseveTel.form-control(
+                type="tel"
+                :class="{ 'is-invalid': errors[0] }"
+                v-model="reserveForm.tel"
+                @focus="formClicked=true"
+              )
+              .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
           .mb-4
             label.form-label(for="reseveMessage") ご質問など
             textarea#reseveMessage.form-control(
@@ -119,8 +119,8 @@ section#reserve.main-section
               type="submit"
               :disabled="invalid"
             ) 上記の内容で申し込む
-  parts-contact-for-tel.mb-4
-  parts-contact-for-line
+  parts-contact-for-tel(trackCd="monitor").mb-4
+  parts-contact-for-line(trackCd="monitor")
 </template>
 
 <script>
@@ -129,23 +129,23 @@ export default {
     return {
       meritList: [
         {
-          title: "優先的な本申込みが可能に！",
-          description: "本オープン後に定員を超えた場合、本申込みの制限を掛ける場合がございます。その場合でも優先的に本申込みが可能となります。",
+          title: "まずはご応募",
+          description: "フォームまたはお電話、LINEにてご応募をお願いいたします。応募後にコチラからご連絡を入れさせていただきます。",
         },
         {
-          title: "本申込み時のお得な割引特典をご用意！",
-          description: "オープン前予約をいただいた方限定で、本申込み時の割引特典をご用意しております。具体的な内容は後日発表いたします。",
+          title: "詳細説明/面談を実施",
+          description: "オンラインにて詳細説明、面談を実施いたします。定員を超えている場合は、一定の基準に沿いモニターを選出させていただきます。",
         },
         {
-          title: "オープンに向けた最新情報をお届け！",
-          description: "オープンに向けて現在鋭意準備中です。安心してご入会いただける様に、準備進捗や重要な情報を定期的にお届けいたします。",
+          title: "正式申込後、トレーニング開始",
+          description: "選出した方へご連絡を差し上げます。実際にお会いし正式に申込をいたします。その後、トレーニングを開始いたします。",
         },
       ],
       reserveForm: {
         name: "",
-        // age: null,
+        age: null,
         email: "",
-        // tel: "",
+        tel: "",
         message: "",
         policy: false,
       },
@@ -154,23 +154,29 @@ export default {
   },
   methods: {
     async sendMail() {
-      const { name, email, message } = this.reserveForm;
+      const { name, age, email, tel, message } = this.reserveForm;
       this.$nuxt.$loading.start();
       const mailOption = {
-        from: `${process.env.projectName} オープン前予約フォーム <info@${process.env.host}>`,
+        from: `${process.env.projectName} モニター応募フォーム <info@${process.env.host}>`,
         to: [email],
         bcc: [process.env.mailBcc],
-        subject: `【${process.env.projectName}】オープン前予約を受け付けました`,
+        subject: `【${process.env.projectName}】モニター応募を受け付けました`,
         text: `
-以下の内容でホームページよりオープン前予約を受け付けました。
+以下の内容でホームページよりモニター応募を受け付けました。
 送信いただいた情報をもとに担当から折り返しますので今しばらくお待ち下さい。
 
 ---
 # お名前
 ${name} 様
 
+# ご年齢
+${age} 歳
+
 # メールアドレス
 ${email}
+
+# お電話番号
+${tel}
 
 # 内容
 ${message}
@@ -196,17 +202,17 @@ https://${process.env.domain}
         );
         window.dataLayer = window.dataLayer || []
         dataLayer.push({
-          'trackReserve': '/reserve/complete',
+          'trackReserve': '/monitor/complete',
           'event': 'loadready',
         })
         this.$toast.success(
-          "事前予約を受け付けました。ありがとうございました。",
+          "モニター応募を受け付けました。ありがとうございました。",
           { duration: 5000 }
         );
         this.resetForm();
       } catch (err) {
         this.$toast.error(
-          "事前予約に失敗しました。時間をおいて再度お試しください。",
+          "モニター応募に失敗しました。時間をおいて再度お試しください。",
           { duration: 5000 }
         );
         console.log(err);
@@ -216,7 +222,7 @@ https://${process.env.domain}
       }
     },
     appendCustomer() {
-      const { name, email, message } = this.reserveForm;
+      const { name, age, email, tel, message } = this.reserveForm;
       this.$ctfCmaClient.createEntry(
         'customer',
         {
@@ -224,20 +230,20 @@ https://${process.env.domain}
             name: {
               'en-US': name,
             },
-            // age: {
-            //   'en-US': parseInt(age),
-            // },
+            age: {
+              'en-US': parseInt(age),
+            },
             email: {
               'en-US': email,
             },
-            // tel: {
-            //   'en-US': tel,
-            // },
+            tel: {
+              'en-US': tel,
+            },
             message: {
               'en-US': message,
             },
             category: {
-              'en-US': 'reserve',
+              'en-US': 'monitor',
             }
           }
         }
@@ -246,9 +252,9 @@ https://${process.env.domain}
     resetForm() {
       this.reserveForm = {
         name: "",
-        // age: null,
+        age: null,
         email: "",
-        // tel: "",
+        tel: "",
         message: "",
         policy: false
       };
@@ -259,7 +265,7 @@ https://${process.env.domain}
     formClicked: () => {
       window.dataLayer = window.dataLayer || []
       dataLayer.push({
-        'trackReserve': '/reserve/input',
+        'trackReserve': '/monitor/input',
         'event': 'loadready',
       })
     }
