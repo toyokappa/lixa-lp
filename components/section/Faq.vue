@@ -1,5 +1,5 @@
 <template lang="pug">
-section#faq.main-section
+section#faq.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title よくあるご質問
   .container-fluid.gx-0
     .row.gx-0
@@ -18,6 +18,10 @@ export default {
     faqList: {
       type: Array,
       required: true,
+    },
+    isBase: {
+      type: Boolean,
+      default: false,
     }
   },
 }

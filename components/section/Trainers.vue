@@ -1,5 +1,5 @@
 <template lang="pug">
-section#trainers.main-section
+section#trainers.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title トレーナー紹介
   .container
     .row
@@ -51,6 +51,10 @@ export default {
       type: Boolean,
       default: false,
       required: false,
+    },
+    isBase: {
+      type: Boolean,
+      default: false,
     }
   },
   data() {

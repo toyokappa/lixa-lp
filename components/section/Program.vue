@@ -1,5 +1,5 @@
 <template lang="pug">
-section#program.main-section.bg-base
+section#program.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title コース・料金
   .container-fluid.gx-lg-4.gx-0
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
@@ -26,6 +26,17 @@ section#program.main-section.bg-base
           .course-menu 全16回 (1回60分)
         .caption ※ LIXAを気に入っていただいた方へ2ヶ月後のコースもご用意しております。
 </template>
+
+<script>
+export default {
+  props: {
+    isBase: {
+      type: Boolean,
+      default: false,
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .imagine

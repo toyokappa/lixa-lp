@@ -2,11 +2,11 @@
 div
   section-hero-for-monitor(:withFree="true")
   section-about-monitor
-  section-about
+  section-about(:isBase="true")
   section-trainers(:trainers="trainers" :withFree="true")
-  section-program-for-monitor
+  section-program-for-monitor(:isBase="true")
   section-condition(:conditionList="conditionList")
-  section-faq(:faqList="faqList")
+  section-faq(:faqList="faqList" :isBase="true")
   section-reserve-for-monitor
 </template>
 

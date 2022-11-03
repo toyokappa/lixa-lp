@@ -1,5 +1,5 @@
 <template lang="pug">
-section#about.main-section.bg-base
+section#about.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title
     span.text-original LIXA
     span が選ばれる理由
@@ -62,6 +62,17 @@ section#about.main-section.bg-base
               | を手に入れるために
             div 一緒にトレーニングをしましょう。
 </template>
+
+<script>
+export default {
+  props: {
+    isBase: {
+      type: Boolean,
+      default: false,
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .icon

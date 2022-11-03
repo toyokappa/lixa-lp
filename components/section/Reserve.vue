@@ -1,5 +1,5 @@
 <template lang="pug">
-section#reserve.main-section
+section#reserve.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title オープン前予約
   .container-fluid.gx-lg-4.gx-0.mb-5
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
@@ -125,6 +125,12 @@ section#reserve.main-section
 
 <script>
 export default {
+  props: {
+    isBase: {
+      type: Boolean,
+      default: false,
+    }
+  },
   data() {
     return {
       meritList: [

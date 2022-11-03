@@ -1,5 +1,5 @@
 <template lang="pug">
-section#program.main-section.bg-base
+section#program.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title コース・料金
   .container-fluid.gx-lg-4.gx-0
     .row.gx-lg-4.gx-0.gy-lg-0.gy-4
@@ -31,6 +31,17 @@ section#program.main-section.bg-base
         .caption ※ デポジットとして40,000円をお預かりさせていただきます。
         .caption ※ デポジットはモニター完遂後にご返金いたします。
 </template>
+
+<script>
+export default {
+  props: {
+    isBase: {
+      type: Boolean,
+      default: false,
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .imagine

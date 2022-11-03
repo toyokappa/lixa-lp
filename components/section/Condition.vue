@@ -1,5 +1,5 @@
 <template lang="pug">
-section#condition.main-section
+section#condition.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title
     .mb-4 モニターへのご応募にあたり
     .section-subtitle 以下の条件を満たしていただくことが条件となります。
@@ -21,6 +21,10 @@ export default {
     conditionList: {
       type: Array,
       required: true,
+    },
+    isBase: {
+      type: Boolean,
+      default: false,
     }
   },
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-section#access.main-section.bg-base
+section#access.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title 店舗アクセス
   .map
     .tmp-map
@@ -23,6 +23,10 @@ export default {
       type: Boolean,
       default: false,
       required: false,
+    },
+    isBase: {
+      type: Boolean,
+      default: false,
     }
   },
 }

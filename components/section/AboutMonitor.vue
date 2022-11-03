@@ -1,5 +1,5 @@
 <template lang="pug">
-section#aboutMonitor.main-section
+section#aboutMonitor.main-section(:class="{ 'bg-base': isBase }")
   h2.section-title 無料モニター募集について
   .contaier
     .text-center.monitor-description
@@ -27,6 +27,17 @@ section#aboutMonitor.main-section
             .col-8 無料
           .offer-title 募集要項
 </template>
+
+<script>
+export default {
+  props: {
+    isBase: {
+      type: Boolean,
+      default: false,
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .monitor-description
