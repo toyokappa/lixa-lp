@@ -24,7 +24,8 @@ section#program.main-section(:class="{ 'bg-base': isBase }")
               span.value.text-original 192,000
               span.unit 円(税込)
           .course-menu 全16回 (1回60分)
-        .caption ※ LIXAを気に入っていただいた方へ2ヶ月後のコースもご用意しております。
+        .caption.mb-4 ※ LIXAを気に入っていただいた方へ2ヶ月後のコースもご用意しております。
+        parts-cta-button-block
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template lang="pug">
 n-link.cta(
-  v-scroll-to="scrollOptions"
+  v-scroll-to="'#reserve'"
   to
 )
   .cta-set
@@ -14,25 +14,6 @@ n-link.cta(
     .cta-animation
 </template>
 
-<script>
-export default {
-  props: {
-    onStart: {
-      type: Function,
-      required: false
-    },
-  },
-  computed: {
-    scrollOptions() {
-      const options = { el: '#reserve' }
-      if (this.onStart) options.onStart = () => this.onStart()
-
-      return options
-    },
-  }
-}
-</script>
-
 <style lang="sass" scoped>
 .cta
   font-weight: bold
@@ -43,10 +24,7 @@ export default {
   display: block
   background: linear-gradient(to right, #FFC226, $accent-color)
   padding: 10px 20px
-
-  position: absolute
-  bottom: 0px
-  left: 0px
+  position: relative
   &:hover
     color: white
   .text
