@@ -1,7 +1,8 @@
 <template lang="pug">
 section#hero
-  img.hero-image-pc(src="@/assets/images/hero_for_monitor_pc.jpg")
-  img.hero-image-sp(src="@/assets/images/hero_for_monitor_sp.jpg")
+  .hero-image
+    img.hero-image-pc(src="@/assets/images/hero_for_monitor_pc.jpg")
+    img.hero-image-sp(src="@/assets/images/hero_for_monitor_sp.jpg")
   img.monitor-limit(src="@/assets/images/monitor_limit.png")
   h2.sub-copy
     div 前橋にオープン予定！
@@ -17,6 +18,17 @@ section#hero
 #hero
   position: relative
   margin-top: 40px
+  .hero-image
+    position: relative
+    &::before
+      content: ''
+      width: 100%
+      background-color: rgba(black, 0.15)
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
   .hero-image-pc
     width: 100%
     height: auto
