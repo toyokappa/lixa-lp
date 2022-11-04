@@ -3,12 +3,11 @@ div
   parts-global-header(:menuList="menuList" cta="モニター応募")
   section-hero-for-monitor
   section-about-monitor
-  section-about(:isBase="true")
-  section-trainers(:trainers="trainers" :isMonitor="true")
-  section-program-for-monitor(:isBase="true")
+  section-about(isBase)
+  section-trainers(:trainers="trainers" isMonitor)
+  section-program-for-monitor(isBase)
   section-condition(:conditionList="conditionList")
-  section-faq(:faqList="faqList" :isBase="true")
-  section-reserve-for-monitor
+  section-reserve-for-monitor(isBase)
   parts-global-footer(:menuList="menuList" cta="モニター応募")
 </template>
 
@@ -22,12 +21,12 @@ export default {
     })
     const trainers = trainerRes.items
 
-    const faqRes = await app.$ctfCdaClient.getEntries({
-      content_type: "faq",
-      'fields.category[in]': 'monitor',
-      order: "fields.position"
-    })
-    const faqList = faqRes.items
+    // const faqRes = await app.$ctfCdaClient.getEntries({
+    //   content_type: "faq",
+    //   'fields.category[in]': 'monitor',
+    //   order: "fields.position"
+    // })
+    // const faqList = faqRes.items
 
     const conditionRes = await app.$ctfCdaClient.getEntries({
       content_type: "condition",
@@ -37,7 +36,7 @@ export default {
 
     return {
       trainers,
-      faqList,
+      // faqList,
       conditionList,
     }
   },
