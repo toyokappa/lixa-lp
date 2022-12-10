@@ -1,7 +1,7 @@
 <template lang="pug">
 .contact-for-tel
   a.line.d-flex.align-items-center.justify-content-center.mb-3(
-    href="https://lin.ee/74XW3Em"
+    href="https://lin.ee/8YeaWSz"
     target="_blank"
     rel="noopener"
     @click="trackLineClick()"
