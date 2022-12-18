@@ -1,7 +1,13 @@
 <template lang="pug">
 section#hero
   .hero-area
-    video.hero-image(playsinline muted autoplay loop poster="@/assets/images/hero.jpg")
+    video.hero-image(
+      playsinline
+      muted
+      autoplay
+      loop
+      :poster="heroImage"
+    )
       source(src="@/assets/videos/hero.mp4" type="video/mp4")
     h1.main-copy
       //- div.copy-lg 群馬初！
@@ -12,6 +18,18 @@ section#hero
       div 前橋下石倉にグランドオープン！
   parts-cta-btn-red
 </template>
+
+<script>
+import heroImage from '@/assets/images/hero.jpg'
+
+export default {
+  data() {
+    return {
+      heroImage
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 #hero
