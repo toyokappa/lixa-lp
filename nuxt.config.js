@@ -87,6 +87,7 @@ export default {
   styleResources: {
     sass: [
       "@/assets/sass/constants.sass",
+      // "bootstrap/scss/bootstrap.scss",
     ]
   },
 

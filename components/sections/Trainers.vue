@@ -15,7 +15,7 @@ section#trainers
     p 彼女たちと楽しく
     p トレーニングしませんか？
   parts-cta-btn-red
-  .trainer-modal.modal(v-show="modalVisible")
+  #trainerModal.trainer-modal.modal.fade(ref="trainerModal")
     .modal-dialog.modal-lg.modal-dialog-centered
       .modal-content.overflow-hidden
         .modal-body.p-0
@@ -29,7 +29,7 @@ section#trainers
                 .profile(v-text="currentTrainer.fields.profile" style="white-space: pre-wrap;")
             img.close(
               src="@/assets/images/close.svg"
-              @click="modalVisible = false"
+              @click="trainerModal.hide()"
             )
 </template>
 
@@ -43,7 +43,20 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      currentTrainer: null,
+      trainerModal: null,
+    }
+  },
+  mounted() {
+    this.trainerModal = new this.$bsModal(this.$refs.trainerModal)
+  },
   methods: {
+    showModal(trainer) {
+      this.currentTrainer = trainer
+      this.trainerModal.show()
+    },
     trainerPhoto(trainer) {
       return trainer.fields.photo?.fields.file.url || noTrainerPhoto
     }
@@ -93,26 +106,22 @@ export default {
     text-align: center
     line-height: 1.4
     margin-bottom: 30px
-.trainer-modal
-  display: block
-  background-color: #000000da
-  .photo
-    width: 100%
-    height: auto
-  .close
-    width: 30px
-    height: 30px
-
-    position: absolute
-    top: 10px
-    right: 10px
-  .name
-    font-size: 24px
-    font-weight: bold
-  .title
-    font-weight: bold
-  .profile
-    font-size: 14px
+  .trainer-modal
+    .photo
+      width: 100%
+      height: auto
+    .close
+      width: 30px
+      height: 30px
+      position: absolute
+      top: 10px
+      right: 10px
+    .name
+      font-size: 24px
+      font-weight: bold
+    .title
+      font-weight: bold
+    .profile
 
 @media screen and (min-width: $pc-width)
   #trainers

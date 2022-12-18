@@ -20,7 +20,7 @@ export default {
       required: true
     },
     stepTexts: {
-      type: String,
+      type: Array,
       required: true
     }
   }
