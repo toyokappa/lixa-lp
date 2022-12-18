@@ -12,7 +12,7 @@ section#gymInfo
         p AZBL BOXを利用
         p.caption.mt-1 ※ ご予約なしでのご来店はお控えくださいませ。
     .map
-      iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4564.642914470674!2d139.05398959383797!3d36.38047622690952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa8a4e5446f4dc5ed!2z44OR44O844K944OK44Or44OI44Os44O844OL44Oz44Kw44K444OgQVpCTCBQUklWQVRF5YmN5qmL5LiL55-z5YCJ5bqXIC8g44Os44Oz44K_44Or44K444OgQVpCTCBCT1jliY3mqYvkuIvnn7PlgInlupc!5e0!3m2!1sja!2sjp!4v1670689512120!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
+      iframe(src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12848.69494225413!2d139.0573082!3d36.380788!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc183282d4dc047c4!2z576O5aWz44K444OgTElYQSDliY3mqYvlupc!5e0!3m2!1sja!2sjp!4v1671373510539!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade")
 </template>
 
 <style lang="sass" scoped>
