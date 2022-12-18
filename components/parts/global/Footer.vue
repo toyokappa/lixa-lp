@@ -2,11 +2,11 @@
 footer.py-2
   ul.footer-nav
     li
-      nuxt-link(to="/terms") 利用規約
+      nuxt-link(to="/terms/") 利用規約
     li
-      nuxt-link(to="/policy") プライバシーポリシー
+      nuxt-link(to="/policy/") プライバシーポリシー
     li
-      nuxt-link(to="/tokusho") 特定商取引法に基づく表示
+      nuxt-link(to="/tokusho/") 特定商取引法に基づく表示
   .text-center &copy; LIXA 2022
 </template>
 

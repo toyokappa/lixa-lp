@@ -24,7 +24,7 @@
           h3 6. 利用条件
           p
             | ご利用いただくサービスのご利用条件は、
-            nuxt-link(to="/terms") 利用規約
+            nuxt-link(to="/terms/") 利用規約
             | をご覧ください。
         section
           h3 支払い方法
@@ -39,6 +39,6 @@
           h3 個人情報の取扱いについて
           p
             | 個人情報の取扱いに関しては、
-            nuxt-link(to="/policy") プライバシーポリシー
+            nuxt-link(to="/policy/") プライバシーポリシー
             | をご参照ください。
 </template>

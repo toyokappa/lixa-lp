@@ -30,7 +30,7 @@
           span.emphasis-orange LIXAの良さ
         p がわかる
   .btn-box
-    nuxt-link.btn-area.mb-3(to="/reserve")
+    nuxt-link.btn-area.mb-3(to="/reserve/")
       .first-text
         span.emphasis-yellow 無料体験
         span の

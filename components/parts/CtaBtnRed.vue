@@ -1,6 +1,6 @@
 <template lang="pug">
 .cta-btn-red
-  nuxt-link.btn-area(to="/reserve")
+  nuxt-link.btn-area(to="/reserve/")
     .btn-text
       .first-text
         div
