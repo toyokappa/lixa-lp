@@ -38,7 +38,7 @@ import noTrainerPhoto from "@/assets/images/no_trainer_photo.png"
 
 export default {
   props: {
-    trainters: {
+    trainers: {
       type: Array,
       required: true
     }

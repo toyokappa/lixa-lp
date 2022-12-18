@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   sections-hero
-  sections-trainers(trainers)
+  sections-trainers(:trainers="trainers")
   sections-problem
   sections-feature
   sections-user-voice
