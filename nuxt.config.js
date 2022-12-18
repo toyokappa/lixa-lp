@@ -58,7 +58,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/burger', ssr: false },
     { src: '@/plugins/bootstrap', ssr: false },
     { src: '~/plugins/contentful' },
     { src: '~/plugins/contentful-management' },
@@ -87,14 +86,12 @@ export default {
   styleResources: {
     sass: [
       "@/assets/sass/constants.sass",
-      // "bootstrap/scss/bootstrap.scss",
     ]
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     ['vue-scrollto/nuxt', { duration: 0, offset: -30 }],
-    '@nuxtjs/toast',
     '@nuxtjs/sitemap',
     '@nuxtjs/redirect-module',
     '@nuxtjs/robots',
