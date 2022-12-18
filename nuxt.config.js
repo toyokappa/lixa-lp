@@ -128,7 +128,7 @@ export default {
   robots: {
     UserAgent: '*',
     // クローリングしないパスを記述
-    Disallow: ['/with_monitor'],
+    Disallow: ['/reserve/complete/', '/reserve/error/'],
     // sitemap.xmlのURLを記述
     Sitemap: `https://${domain}/sitemap.xml`,
   },
