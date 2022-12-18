@@ -29,8 +29,9 @@ export default {
     // afimaのトラッキングタグ
     script: [
       { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
-      { children: 'aAS();' }
-    ]
+      { innerHTML: 'aAS();' }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   }
 }
 </script>

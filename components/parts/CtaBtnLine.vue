@@ -21,13 +21,17 @@
             span 秒で完了！
 </template>
 
-<script setup>
-const trackBtnClick = () => {
-  window.dataLayer = window.dataLayer || []
-  dataLayer.push({
-    'trackReserve': `/reserve/click_line_button`,
-    'event': 'loadready',
-  })
+<script>
+export default {
+  methods: {
+    trackBtnClick() {
+      window.dataLayer = window.dataLayer || []
+      dataLayer.push({
+        'trackReserve': `/reserve/click_line_button`,
+        'event': 'loadready',
+      })
+    }
+  }
 }
 </script>
 

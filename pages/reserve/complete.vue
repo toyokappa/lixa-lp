@@ -14,16 +14,19 @@
   nuxt-link.back-link(to="/") トップページへ戻る
 </template>
 
-<script setup lang="ts">
-const $route = useRoute()
-
-useHead({
-  // afimaのCVタグ
-  script: [
-    { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
-    { children: `cCV(942, 0, "${$route.query.uuid}");` }
-  ]
-})
+<script>
+export default {
+  head() {
+    // afimaのCVタグ
+    return {
+      script: [
+        { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
+        { innerHTML: `cCV(942, 0, "${this.$route.query.uuid}");` }
+      ],
+       __dangerouslyDisableSanitizers: ['script']
+    }
+  }
+}
 </script>
 
 <style lang="sass" scoped>
