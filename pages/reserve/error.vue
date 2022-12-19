@@ -38,3 +38,11 @@
     color: $accent-color
     text-decoration: none
 </style>
+
+<script>
+export default {
+  head: {
+    title: `無料体験申込エラー | ${process.env.projectName}`
+  }
+}
+</script>

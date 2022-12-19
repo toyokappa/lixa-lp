@@ -63,3 +63,11 @@
           p ご意見、ご質問、苦情のお申出その他利用者情報の取扱いに関するお問い合わせは、下記の窓口までお願い致します。
           p LIXAサポート窓口：support@lixa.jp
 </template>
+
+<script>
+export default {
+  head: {
+    title: `プライバシーポリシー | ${process.env.projectName}`
+  }
+}
+</script>

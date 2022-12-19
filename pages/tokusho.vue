@@ -42,3 +42,11 @@
             nuxt-link(to="/policy/") プライバシーポリシー
             | をご参照ください。
 </template>
+
+<script>
+export default {
+  head: {
+    title: `特定商取引法に基づく表示 | ${process.env.projectName}`
+  }
+}
+</script>

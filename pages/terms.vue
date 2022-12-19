@@ -124,3 +124,11 @@
           h2 第20条 専属的合意管轄
           p 本ジムの利用、本サービスに関連して提供されるトレーニングその他本ジムと会員との間で紛争が生じた場合には、前橋地方裁判所を第一審の専属的合意管轄裁判所とします。
 </template>
+
+<script>
+export default {
+  head: {
+    title: `利用規約 | ${process.env.projectName}`
+  }
+}
+</script>

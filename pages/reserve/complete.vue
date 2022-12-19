@@ -19,6 +19,7 @@ export default {
   head() {
     // afimaのCVタグ
     return {
+      title: `無料体験申込完了 | ${process.env.projectName}`,
       script: [
         { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
         { innerHTML: `cCV(942, 0, "${this.$route.query.uuid}");` }
