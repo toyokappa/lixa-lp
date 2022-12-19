@@ -16,6 +16,7 @@
 
 <style lang="sass" scoped>
 .campaign-card
+  text-align: center
   background-color: $dark-color
   padding: 30px 0 20px
   .emphasis-md

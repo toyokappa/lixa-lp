@@ -14,7 +14,7 @@ div
         :stepImage="step.image"
         :stepTexts="step.texts"
       )
-    .container.campaign-section
+    .container.mb-4
       parts-campaign-card
     parts-cta-btn-red
 </template>
@@ -53,6 +53,4 @@ export default {
   #trial
     .step-section
       width: 800px
-    .campaign-section
-      margin-bottom: 40px
 </style>

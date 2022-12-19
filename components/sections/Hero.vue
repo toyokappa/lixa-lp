@@ -16,6 +16,8 @@ section#hero
         span.emphasis-red 美女が教える
         span パーソナルジム
       div 前橋下石倉にグランドオープン！
+  .container.campaign-area
+    parts-campaign-card
   parts-cta-btn-red
 </template>
 
@@ -38,7 +40,7 @@ export default {
     color: $accent-color
   .hero-area
     position: relative
-    margin-bottom: 36px
+    margin-bottom: 20px
     .hero-image
       width: 100%
       aspect-ratio: 4/3
@@ -58,7 +60,11 @@ export default {
       bottom: 0
       .copy-lg
         font-size: 32px
-    @media (min-width: $pc-width)
+  .campaign-area
+    margin-bottom: 32px
+@media (min-width: $pc-width)
+  #hero
+    .hero-area
       .hero-image
         height: calc(100vh - 56px) // ヘッダー分
         aspect-ratio: 16/9
