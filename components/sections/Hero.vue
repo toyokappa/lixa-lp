@@ -6,7 +6,6 @@ section#hero
       muted
       autoplay
       loop
-      :poster="heroImage"
     )
       source(src="@/assets/videos/hero.mp4" type="video/mp4")
     h1.main-copy
@@ -20,18 +19,6 @@ section#hero
     parts-campaign-card
   parts-cta-btn-red
 </template>
-
-<script>
-import heroImage from '@/assets/images/hero.jpg'
-
-export default {
-  data() {
-    return {
-      heroImage
-    }
-  }
-}
-</script>
 
 <style lang="sass" scoped>
 #hero
