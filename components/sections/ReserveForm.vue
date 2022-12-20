@@ -44,6 +44,22 @@ section#reserveForm
             )
             .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
         .mb-4
+          validation-provider(
+            v-slot="{ errors }"
+            rules="required"
+            name="お電話番号"
+          )
+            label.form-label(for="reseveTel")
+              span.me-2 お電話番号
+              span.badge.bg-original 必須
+            input#reseveEmail.form-control(
+              type="tel"
+              :class="{ 'is-invalid': errors[0] }"
+              v-model="reserveForm.tel"
+              @focus="formClicked=true"
+            )
+            .invalid-feedback(v-show="errors[0]") {{ errors[0] }}
+        .mb-4
           label.form-label(for="reseveMessage") ご質問など
           textarea#reseveMessage.form-control(
             rows="5"
@@ -89,6 +105,7 @@ export default {
       reserveForm: {
         name: "",
         email: "",
+        tel: "",
         message: "",
         policy: false,
       },
@@ -97,7 +114,7 @@ export default {
   },
   methods: {
     async sendMail() {
-      const { name, email, message } = this.reserveForm;
+      const { name, email, tel, message } = this.reserveForm;
       this.$nuxt.$loading.start();
 
       const uuid = Math.random().toString(32).substring(2)
@@ -116,6 +133,9 @@ ${name} 様
 
 # メールアドレス
 ${email}
+
+# お電話番号
+${tel}
 
 # 内容
 ${message}
@@ -157,7 +177,7 @@ https://${process.env.domain}
       }
     },
     appendCustomer() {
-      const { name, email, message } = this.reserveForm;
+      const { name, email, tel, message } = this.reserveForm;
       this.$ctfCmaClient.createEntry(
         'customer',
         {
@@ -167,6 +187,9 @@ https://${process.env.domain}
             },
             email: {
               'en-US': email,
+            },
+            tel: {
+              'en-US': tel,
             },
             message: {
               'en-US': message,
@@ -182,6 +205,7 @@ https://${process.env.domain}
       this.reserveForm = {
         name: "",
         email: "",
+        tel: "",
         message: "",
         policy: false
       };

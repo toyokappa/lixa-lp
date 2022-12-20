@@ -9,7 +9,6 @@ section#hero
     )
       source(src="@/assets/videos/hero.mp4" type="video/mp4")
     h1.main-copy
-      //- div.copy-lg 群馬初！
       div 男性人気No.1！
       div
         span.emphasis-red 美女が教える
