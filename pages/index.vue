@@ -30,7 +30,6 @@ export default {
     script: [
       { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
       { innerHTML: 'aAS();' },
-      { rel: 'canonical', href: `https://${domain}` }
     ],
     __dangerouslyDisableSanitizers: ['script']
   }
