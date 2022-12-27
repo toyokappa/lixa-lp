@@ -26,10 +26,20 @@ section#program
       span.emphasis-red かっこいいモテボディ
       span を作りましょう！
   .next-program
-    .next-title 更にその先へ...
-    .emphasis-sm
-      p 2ヶ月コースを無事に終了した方に向けて
-      p 特別な専用コースもご用意しております。
+    .emphasis-sm 気になるけど手頃で通いたい...
+    .mb-4
+      span.emphasis-sm そんなアナタに
+      span.emphasis-md.emphasis-yellow ビジター料金
+    .emphasis-sm 入会金不要、都度払い、何度でもOK
+    .mb-4
+      span.emphasis-lg.emphasis-yellow 14,980
+      span.emphasis-sm 円(税込)で利用できる。
+    p
+      span.emphasis-sm トレーナーの指名も
+      span.emphasis-md.emphasis-yellow 無料
+      span.emphasis-sm でできる。
+    .emphasis-sm.mb-3 お気に入りの美女と楽しくトレーニング！
+    p.caption ※ ビジター料金の場合、食事管理は対象外となります。
 </template>
 
 <style lang="sass" scoped>
@@ -44,6 +54,10 @@ section#program
     font-size: 32px
   .emphasis-red
     color: $accent-color
+  .emphasis-yellow
+    color: $emphasis-yellow
+  .caption
+    font-size: 12px
   .section-title
     margin-bottom: 30px
   .price-section
