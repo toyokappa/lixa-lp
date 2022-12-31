@@ -1,8 +1,8 @@
 const host = "lixa.jp"
 const domain = host
 const projectName = "美女ジムLIXA"
-const pageTitle = "美女ジムLIXA(リクサ) | 男性人気No.1！美女が教えるパーソナルジム"
-const description = "群馬初！トレーナーは女子のみ！食事管理、筋トレを通してかっこいい体作りをサポート。女性目線でキメ細やかに指導。理想のモテボディを手に入れましょう。"
+const pageTitle = "美女ジムLIXA 前橋店 | 男性人気No.1！美女が教えるパーソナルジム"
+const description = "群馬初！トレーナーは美女のみ！前橋下石倉町にオープン！食事管理、筋トレを通してかっこいい体作りをサポート。女性目線でキメ細やかに指導。理想のモテボディを手に入れましょう。"
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
