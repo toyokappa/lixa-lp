@@ -18,7 +18,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: description },
-      { name: 'keywords', content: '男性専用,パーソナルジム,パーソナルトレーニング,プライベートジム'},
+      { name: 'keywords', content: '前橋,パーソナルジム,パーソナルトレーニング,プライベートジム'},
       { name: 'format-detection', content: 'telephone=no' },
       { property: 'fb:app_id', content: '328198145005843' },
       { name: 'msapplication-TileColor', content: '#00aba9' },
