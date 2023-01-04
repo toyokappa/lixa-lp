@@ -18,7 +18,8 @@ section#program
           span 円(税込)
   .proposal
     p
-      span 2ヶ月で
+      span 全16回のトレーニングで
+    p
       span.emphasis-red 理想のカラダ
       span を手に入れる。
     p 体質を改善し、健康で太りにくく
