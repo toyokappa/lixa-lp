@@ -18,8 +18,7 @@ div
         :stepImage="step.image"
         :stepTexts="step.texts"
       )
-    parts-cta-btn-line.mb-5
-    parts-cta-btn-tel
+    parts-cta-btn-line
 </template>
 
 <script>
