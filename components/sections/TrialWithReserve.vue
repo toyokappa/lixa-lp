@@ -19,6 +19,7 @@ div
         :stepTexts="step.texts"
       )
     parts-cta-btn-line
+    //- parts-cta-btn-tel 一旦非表示、シフトでのオペレーションフローが改善されれば戻す
 </template>
 
 <script>
