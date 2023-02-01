@@ -14,8 +14,8 @@ div
         :stepImage="step.image"
         :stepTexts="step.texts"
       )
-    .container.mb-4
-      parts-campaign-card
+    //- .container.mb-4
+    //-   parts-campaign-card
     parts-cta-btn-red
 </template>
 

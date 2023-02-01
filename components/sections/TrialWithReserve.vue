@@ -4,8 +4,8 @@ div
     p.caption あなたの人生を変える
     p.emphasis-md 無料体験のご案内
   section#trial
-    .container.campaign-section
-      parts-campaign-card
+    //- .container.campaign-section
+    //-   parts-campaign-card
     .emphasis-md.mb-2
       span.emphasis-red LIXA
       span は無料でここまでできます！

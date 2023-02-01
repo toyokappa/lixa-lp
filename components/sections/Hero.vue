@@ -14,8 +14,8 @@ section#hero
         span.emphasis-red 美女が教える
         span パーソナルジム
       div 前橋下石倉にグランドオープン！
-  .container.campaign-area
-    parts-campaign-card
+  //- .container.campaign-area
+  //-   parts-campaign-card
   parts-cta-btn-red
 </template>
 
