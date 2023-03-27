@@ -9,7 +9,7 @@ section#program
       tr
         td.emphasis-sm 入会金
         td.price
-          span.emphasis-lg.emphasis-red 40,000
+          span.emphasis-lg.emphasis-red 22,000
           span 円(税込)
       tr
         td.emphasis-sm 2ヶ月コース
